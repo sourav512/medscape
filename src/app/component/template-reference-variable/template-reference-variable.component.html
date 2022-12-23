@@ -1,0 +1,6 @@
+<div>
+    <h1>Template Reference Variable</h1>
+    <input type="password" #inputBox ngModel>
+    <button [disabled]="!inputBox.value" (click)="logData(inputBox.value);isPassword = !isPassword">click</button>
+    <button (click)="focusElement()">focus</button>
+</div>

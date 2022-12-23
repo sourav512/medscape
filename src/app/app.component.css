@@ -1,0 +1,10 @@
+.main-container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/backgroung.png");
+    background-size: cover;
+    justify-items: center;
+    /* // padding: 4rem; */
+    /* // margin: auto; */
+}

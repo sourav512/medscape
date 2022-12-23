@@ -1,0 +1,46 @@
+<div class="grid-container">
+    <div class="left-image">
+        <img class="image" src="https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_960_720.png" alt="">
+        <div class="project-detail">
+
+            <div class="project-name">MedScape</div>
+            <div class="project-subheading">Ai-Ml Based Health Predictor</div>
+        </div>
+    </div>
+    <div class="form">
+        <div class="form-controls">
+            <div class="heading">Hello! {{name}}</div>
+            <div class="subheading">Welcome back! Please enter your details</div>
+            <div class="name-input">
+                <div class="first-name">
+                    <label for="name">First Name</label>
+                    <input type="text" name="name" [(ngModel)]="name" #firstName>
+                </div>
+                <div class="last-name">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname">
+                </div>
+            </div>
+            <div class="email-input">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+            </div>
+            <div class="password-input">
+                <label for="password">Password</label>
+                <div class="eye-icon">
+                    <i class="fa-solid fa-eye icon" (mousedown)="showPassword = true"
+                        (mouseup)="showPassword = false"></i>
+                </div>
+                <input [type]="showPassword?'text':'password'" name="password">
+            </div>
+            <div class="button">
+                <button class="login-button">SignUp</button>
+                <button class="google-button"
+                    style="border:2px solid rgb(19, 95, 236);color: rgb(19,95,236);background-color: white;">Google
+                    Signin</button>
+                <!-- <button class="google-button">SignUp</button> -->
+                <span class="signup">Already have an account? <a routerLink="/login">Login</a></span>
+            </div>
+        </div>
+    </div>
+</div>

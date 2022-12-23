@@ -1,0 +1,34 @@
+<div class="container" *ngIf="!hideSelectionBox">
+    <div class="heading">Select Symptons</div>
+    <div class="option">
+        
+        <select name="name" id="">
+            <ng-container *ngFor="let name of sympton">
+                <option value="Name">{{name.split("_").join(" ")}}</option>
+            </ng-container>
+        </select>
+        <select name="name" id="">
+            <ng-container *ngFor="let name of sympton">
+                <option value="Name">{{name.split("_").join(" ")}}</option>
+            </ng-container>
+        </select>
+        <select name="name" id="">
+            <ng-container *ngFor="let name of sympton">
+                <option value="Name">{{name.split("_").join(" ")}}</option>
+            </ng-container>
+        </select>
+        <select name="name" id="">
+            <ng-container *ngFor="let name of sympton">
+                <option value="Name">{{name.split("_").join(" ")}}</option>
+            </ng-container>
+        </select>
+        <select name="name" id="">
+            <ng-container *ngFor="let name of sympton">
+                <option value="Name">{{name.split("_").join(" ")}}</option>
+            </ng-container>
+        </select>
+        </div>
+        <div class="button-submit" (click)="getData()">
+            <button >Select Symptons</button>
+        </div>
+</div>
