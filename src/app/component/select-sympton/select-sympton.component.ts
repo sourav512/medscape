@@ -10,7 +10,7 @@ export class SelectSymptonComponent implements OnInit {
   constructor() { }
   hideSelectionBox: boolean = false;
 
-  sympton: string[] = ['itching', 'skin_rash', 'nodal_skin_eruptions', 'continuous_sneezing', 'shivering', 'chills', 'joint_pain',
+  sympton: string[] = ['None','itching', 'skin_rash', 'nodal_skin_eruptions', 'continuous_sneezing', 'shivering', 'chills', 'joint_pain',
     'stomach_pain', 'acidity', 'ulcers_on_tongue', 'muscle_wasting', 'vomiting', 'burning_micturition', 'spotting_ urination', 'fatigue',
     'weight_gain', 'anxiety', 'cold_hands_and_feets', 'mood_swings', 'weight_loss', 'restlessness', 'lethargy', 'patches_in_throat',
     'irregular_sugar_level', 'cough', 'high_fever', 'sunken_eyes', 'breathlessness', 'sweating', 'dehydration', 'indigestion',
@@ -32,8 +32,16 @@ export class SelectSymptonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getData() {
-    fetch("https://randomuser.me/api?results=5").then(data => data.json()).then(data => { console.log(data); this.hideSelectionBox = true });
+  diseaseDetected:string='';
+
+  s1:string='';
+  s2:string='';
+  s3:string='';
+  s4:string='';
+  s5:string='';
+
+  getData(s1:string,s2:string,s3:string,s4:string,s5:string) {
+    fetch(`http://localhost:5000/?s1=${s1}&s2=${s2}&s3=${s3}&s4=${s4}&s5=${s5}`).then(data => data.json()).then(data => { console.log(data); this.hideSelectionBox = true;this.diseaseDetected = data.disease;console.log(`http://localhost:5000/?s1=${s1}&s2=${s2}&s3=${s3}&s4=${s4}&s5=${s5}`) });
   }
 
 }

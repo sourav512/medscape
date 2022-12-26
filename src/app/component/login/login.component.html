@@ -13,7 +13,7 @@
             <div class="subheading">Welcome back! Please enter your details</div>
             <div class="email-input">
                 <label for="email">Email</label>
-                <input type="email" name="email">
+                <input type="email" name="email" [(ngModel)]="userName">
             </div>
             <div class="password-input">
                 <label for="password">Password</label>
@@ -21,11 +21,11 @@
                     <i class="fa-solid fa-eye icon" (mousedown)="showPassword = true"
                         (mouseup)="showPassword = false"></i>
                 </div>
-                <input [type]="showPassword?'text':'password'" name="password">
+                <input [type]="showPassword?'text':'password'" name="password" [(ngModel)]="password">
             </div>
             <div class="button">
-                <button class="login-button">Login</button>
-                <button disabled class="google-button"
+                <button (click)="checkUser(userName,password)" class="login-button">Login</button>
+                <button class="google-button"
                     style="border:2px solid rgb(19, 95, 236);color: rgb(19,95,236);background-color: white;">Google
                     Signin</button>
                 <!-- <button class="google-button">SignUp</button> -->
