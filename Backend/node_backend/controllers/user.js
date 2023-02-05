@@ -1,10 +1,14 @@
 const cloudinary = require("cloudinary");
 const User = require("../models/user");
 const cookies = require("../utils/cookieToken")
-const {invalid,
+const mailHelper = require("../utils/mailHelper")
+const crypto = require('crypto')
+const {invalid,success,
         missing,
         notFound} = require("../utils/response");
 const { async } = require("rxjs");
+const { log } = require("console");
+
 exports.signUp = async (req, res, next) => {
   try {
     const { name, email, password, gender, city, date_of_birth } = req.body;
@@ -71,3 +75,54 @@ exports.logIn = async (req,res,next) =>{
     cookies(user,res)
 }
 
+exports.forgotPassword = async(req,res,next) =>{
+    const{email} = req.body
+    const user = await User.findOne({email})
+    if(!user){
+      return next (notFound(res,`User does not exist`))
+    }
+    const forgotToken = user.getForgotPasswordToken()
+    await user.save({validateBeforeSave: false})
+    const myUrl = `${req.protocol}://${req.get("host")}/api/v1/user/password/reset/${forgotToken}`
+    const message = `Copy paste this url ${myUrl}`
+    try {
+      await mailHelper({
+        email: user.email,
+        subject: "Password Reset Email",
+        message
+      })
+      success(res,`Email sent successfully`)
+    } catch (error) {
+      user.forgotPasswordToken = undefined
+      user.forgotPasswordTokenExpiry = undefined
+      await user.save({validateBeforeSave:false})
+      return next(error)
+    }
+}
+
+exports.resetPassword = async(req,res,next) =>{
+  const token = req.params.token 
+  const encryToken = crypto.createHash("sha256").update(token).digest("hex")
+  const user = await User.findOne({
+    
+      forgotPasswordToken: {$eq :encryToken },
+      forgotPasswordTokenExpiry : {$lt : Date.now()}
+  });
+
+  if(!user){
+    console.log('no user')
+  }
+  if (req.body.password !== req.body.confirmPassword) {
+    return next(
+      invalid(res,`Invalid password`)
+    );
+  }
+
+  user.password = req.body.password
+
+  user.forgotPasswordToken = undefined;
+  user.forgotPasswordTokenExpiry = undefined;
+
+  await user.save();
+  cookies(user,res)
+}

@@ -2,7 +2,7 @@
 
 # Compiled output
 /dist
-/tmp
+/Backend/node_backend/tmp
 /out-tsc
 /bazel-out
 
