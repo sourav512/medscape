@@ -2,9 +2,12 @@
     display: grid;
     height: 100vh;
     width: 100vw;
+    grid-template-rows: 60px 1fr ;
     background-image: url("../assets/backgroung.png");
     background-size: cover;
     justify-items: center;
-    /* // padding: 4rem; */
-    /* // margin: auto; */
+}
+
+.content{
+    padding: 0 9px 9px 9px;
 }

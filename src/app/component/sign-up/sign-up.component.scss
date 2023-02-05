@@ -1,53 +1,20 @@
 .grid-container {
     display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-columns: 1fr auto;
+    height: calc(100vh - 78px);
+    width: calc(100vw - 18px);
+    grid-template-columns: 1fr 2fr;
     border-radius: 12px;
     overflow: hidden;
 }
 
 .left-image {
-    width: 100%;
-    height: 100%;
     display: flex;
-    // background-color: black;
-    // opacity: 0.1;
-    justify-content: center;
+    padding: 2rem;
+    background-image: url("../../../assets/blurbackgroung.jpg");
     align-items: center;
-    overflow: hidden;
 }
-
-.project-detail {
-    position: absolute;
-
-}
-
-.project-subheading {
-    // position: absolute;
-    font-weight: 500;
-    color: white;
-    text-align: center;
-}
-
-.project-name {
-    // position: absolute;
-    font-size: 6rem;
-    color: white;
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-.image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    filter: blur(24px);
-}
-
 
 .form {
-    padding: 2rem 4rem;
     // padding: 2rem;
     width: 100%;
     height: 100%;
@@ -55,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
 }
 
 
@@ -79,10 +46,20 @@ label {
 
 }
 
+
+.profile-photo{
+    width: 48px;
+    height: 48px;
+    // border-radius: 50%;
+    object-fit: contain;
+    // overflow: hidden;
+}
+
+
 .email-input,
 .password-input,
-.name-input {
-    margin-bottom: 1rem;
+.input-set {
+    margin-bottom: 0.5rem;
 }
 
 input[type='password'] {
@@ -91,20 +68,25 @@ input[type='password'] {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.name-input {
+.input-set {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 0.5rem;
-
 }
 
-.first-name,
-.last-name {
+.first-input,
+.last-input {
     display: flex;
     flex-direction: column;
 }
 
-input {
+.illustration{
+    width: 13rem;
+    // margin-bottom: 2rem;
+}
+
+input,select {
     border: none;
     padding: 0.4rem;
     border-radius: 0.5rem;
@@ -135,6 +117,12 @@ button {
     font-weight: 500;
 }
 
+.form-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .signup {
     font-size: 0.75rem;
     margin: auto;
@@ -148,6 +136,15 @@ a {
     color: blueviolet;
     cursor: pointer;
 }
+
+
+.message{
+    padding: 1rem;
+    display: block;
+    color: white;
+    font-size: 1rem;
+}
+
 
 @media only screen and (max-width: 600px) {
     .form {
