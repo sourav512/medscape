@@ -8,6 +8,7 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule ,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

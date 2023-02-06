@@ -10,7 +10,7 @@
         <div class="form-controls">
             <div class="form-header">
                 <div class="greet">
-                    <div class="heading">Hello! {{name}}</div>
+                    <div class="heading">Hello! {{user.firstName}}</div>
                     <div class="subheading">Welcome back! Please enter your details</div>
                 </div>
                 <div class="email-input">
@@ -22,39 +22,39 @@
             <div class="input-set">
                 <div class="first-input">
                     <label for="name">First Name</label>
-                    <input type="text" name="name" [(ngModel)]="name" #firstName>
+                    <input type="text" name="name" [(ngModel)]="user.firstName">
                 </div>
                 <div class="last-input">
                     <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname">
+                    <input type="text" [(ngModel)]="user.lastName" name="lastname">
                 </div>
             </div>
             <div class="input-set">
                 <div class="first-input">
                     <label for="name">Gender</label>
-                    <select name="" id="">
+                    <select name="" id="" [(ngModel)]="user.gender">
                         <option value="male">male</option>
                         <option value="female">female</option>
                     </select>
                 </div>
                 <div class="last-input">
                     <label for="lastname">Date Of Birth</label>
-                    <input type="text" name="lastname">
+                    <input type="date" name="lastname" [(ngModel)]="user.dateOfBirth">
                 </div>
             </div>
             <div class="input-set">
                 <div class="first-input">
                     <label for="name">Contact No.</label>
-                    <input type="tel" name="" id="">
+                    <input type="tel" name="" id="" [(ngModel)]="user.contact">
                 </div>
                 <div class="last-input">
                     <label for="lastname">City</label>
-                    <input type="text" name="lastname">
+                    <input type="text" name="lastname" [(ngModel)]="user.city">
                 </div>
             </div>
             <div class="email-input">
                 <label for="email">Email</label>
-                <input type="email" name="email">
+                <input type="email" name="email" [(ngModel)]="user.email">
             </div>
             <div class="password-input">
                 <label for="password">Password</label>
@@ -62,10 +62,10 @@
                     <i class="fa-solid fa-eye icon" (mousedown)="showPassword = true"
                         (mouseup)="showPassword = false"></i>
                 </div>
-                <input [type]="showPassword?'text':'password'" name="password">
+                <input [type]="showPassword?'text':'password'" name="password" [(ngModel)]="user.password">
             </div>
             <div class="button">
-                <button class="login-button">SignUp</button>
+                <button class="login-button" (click)="signupUser()">SignUp</button>
                 <button class="google-button"
                     style="border:2px solid rgb(19, 95, 236);color: rgb(19,95,236);background-color: white;">Google
                     Signin</button>
