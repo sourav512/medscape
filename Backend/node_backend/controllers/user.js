@@ -9,50 +9,63 @@ const {invalid,success,
 const { async } = require("rxjs");
 const { log } = require("console");
 
+
 exports.signUp = async (req, res, next) => {
   try {
-    const { name, email, password, gender, city, date_of_birth } = req.body;
+    const { firstName,lastName, email, password, gender, city, dateOfBirth ,contact} = req.body;
 
-  if (!email || !name || !password || !gender || !city || !date_of_birth) {
+  if (!email || !firstName || !lastName || !password || !gender || !city || !dateOfBirth || !contact) {
     return next(missing(res, "All fields required"));
-  } else if (!req.files) {
-    return next(missing(res, "Image required to sign up"));
-  }
-  console.log('here ');
-  let file = req.files.photo;
-  const result = await cloudinary.v2.uploader.upload(file.tempFilePath, {
-    folder: "users",
-    width: 150,
-    crop: "scale",
-  });
-  console.log('here2');
-  const user2 = await User.findOne({ email });
-  console.log(user2);
+  } 
+  const user2 = await User.findOne({
+    $or:[
+      {email},
+      {contact}
+    ]
+  }) 
   if(user2){
-    invalid(res, 'Email already exist');
-  }  
+    invalid(res, 'Email or contact  already exist');
+  }
+ 
   if (!user2) {
-    console.log('enteru');
-   
-    const user = await User.create({
-      name,
-      email,
-      password,
-      gender, 
-      city,
-      date_of_birth,
-      photo: {
-        id: result.public_id,
-      },
-    });
-    console.log('here');
-    cookies(user, res);
+    if(req.files){
+      let file = req.files.photo;
+      const result = await cloudinary.v2.uploader.upload(file.tempFilePath, {
+        folder: "users",
+        width: 150,
+        crop: "scale",
+      });
+      const user = await User.create({
+        firstName,
+        lastName,
+        email,
+        password,
+        gender, 
+        contact,
+        city,
+        dateOfBirth,
+        photo: {
+          id: result.public_id,
+        },
+      });
+      cookies(user, res);
+    }else{
+      const user = await User.create({
+        firstName,
+        lastName,
+        email,
+        password,
+        gender, 
+        contact,
+        city,
+        dateOfBirth,
+      });
+      cookies(user, res);
+    }
   } 
   } catch (error) {
     console.log(error);
   }
-  
-  
 };
 
 exports.logIn = async (req,res,next) =>{
@@ -73,6 +86,14 @@ exports.logIn = async (req,res,next) =>{
     }
 
     cookies(user,res)
+}
+
+exports.logOut = async (req,res,next) =>{
+  res.cookie('token', null,{
+    expires: new Date(Date.now()),
+    httpOnly: true
+  })
+  success(res,`Logged out`)
 }
 
 exports.forgotPassword = async(req,res,next) =>{
@@ -126,3 +147,5 @@ exports.resetPassword = async(req,res,next) =>{
   await user.save();
   cookies(user,res)
 }
+
+

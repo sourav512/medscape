@@ -5,12 +5,17 @@ const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
 
 const userSchema = new mongoose.Schema({
-    name:{
+    firstName:{
         type:String,
         required : [true,`Please enter the name`],
         maxlength : 30
     },
-    date_of_birth:{
+    lastName:{
+        type:String,
+        required:[true,`Please enter the last name`],
+        maxlength:30
+    },
+    dateOfBirth:{
         type:String,
         required: [true,`Please select date of birth`]
     },
@@ -19,6 +24,12 @@ const userSchema = new mongoose.Schema({
         required : [true,`Please enter the email`],
         //validate: [validator.isEmail, `Please provide proper email`],
         unique:true 
+    },
+    contact:{
+        type:String,
+        required:[true,`Please enter the contact`],
+        maxlength:10,
+        unique:true
     },
     gender:{
         type:String,
@@ -36,7 +47,6 @@ const userSchema = new mongoose.Schema({
     photo:{
         id:{
             type: String,
-            required: true
         }
     },
     disease_record:[
