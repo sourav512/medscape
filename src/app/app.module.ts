@@ -8,6 +8,8 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     SignUpComponent,
     PageNotFoundComponent,
-    SelectSymptonComponent
+    SelectSymptonComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule ,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

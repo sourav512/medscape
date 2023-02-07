@@ -1,62 +1,44 @@
 .grid-container {
     display: grid;
-    height: 90%;
-    width: 90%;
-    grid-template-columns: 1fr auto;
+    height: calc(100vh - 78px);
+    width: calc(100vw - 18px);
+    grid-template-columns: 1fr 2fr;
     border-radius: 12px;
-    justify-self: center;
-    align-self: center;
+    // justify-self: center;
+    // align-self: center;
     overflow: hidden;
 }
 
 .left-image {
-    width: 100%;
-    height: 100%;
     display: flex;
-    // background-color: black;
-    // opacity: 0.1;
-    justify-content: center;
+    padding: 2rem;
+    background-image: url("../../../assets/blurbackgroung.jpg");
     align-items: center;
-    overflow: hidden;
-}
-
-.project-detail {
-    position: absolute;
 
 }
 
-.project-subheading {
-    // position: absolute;
-    font-weight: 500;
+.illustration{
+    width: 13rem;
+    margin-bottom: 2rem;
+}
+
+.message{
+    padding: 1rem;
+    display: block;
     color: white;
-    text-align: center;
+    font-size: 1rem;
 }
 
-.project-name {
-    // position: absolute;
-    font-size: 6rem;
-    color: white;
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-.image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    filter: blur(24px);
-}
 
 .form {
-    padding: 2rem 4rem;
-    // padding: 2rem;
+    padding: 2rem;
     width: 100%;
-    height: 100%;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
+    overflow: hidden;
 }
 
 
@@ -67,6 +49,10 @@
 .button {
     display: flex;
     flex-direction: column;
+}
+
+.form-control{
+    width: 20rem;
 }
 
 label {
