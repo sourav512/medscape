@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
-import { SelectSymptonComponent } from './component/select-sympton/select-sympton.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { SelectSymptomComponent } from './component/select-symptom/select-symptom.component';
+import { SymptomCardComponent } from './component/symptom-card/symptom-card.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     LoginComponent,
     SignUpComponent,
     PageNotFoundComponent,
-    SelectSymptonComponent,
-    NavbarComponent
+    NavbarComponent,
+    SelectSymptomComponent,
+    SymptomCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule ,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectSymptonComponent } from './select-sympton.component';
+import { SelectSymptomComponent } from './select-symptom.component';
 
-describe('SelectSymptonComponent', () => {
-  let component: SelectSymptonComponent;
-  let fixture: ComponentFixture<SelectSymptonComponent>;
+describe('SelectSymptomComponent', () => {
+  let component: SelectSymptomComponent;
+  let fixture: ComponentFixture<SelectSymptomComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectSymptonComponent ]
+      declarations: [ SelectSymptomComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SelectSymptonComponent);
+    fixture = TestBed.createComponent(SelectSymptomComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
