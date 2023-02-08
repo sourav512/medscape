@@ -3,6 +3,8 @@ const User = require("../models/user");
 const cookies = require("../utils/cookieToken")
 const mailHelper = require("../utils/mailHelper")
 const crypto = require('crypto')
+const passport = require('passport')
+require('../utils/googleAuth')
 const {invalid,success,
         missing,
         notFound} = require("../utils/response");
@@ -149,3 +151,23 @@ exports.resetPassword = async(req,res,next) =>{
 }
 
 
+exports.googleLogin = async(req,res,next) =>{
+  await passport.authenticate('google', {scope: ['email', 'profile']})
+  console.log('enntry')
+}
+
+
+exports.googleLoginCall = async(req,res,next) =>{
+  passport.authenticate('google',{
+    failureRedirect:'/api/v1/auth/failure'
+  })
+  //res.redirect('/api/v1/aw')
+  
+  res.redirect('/api/v1/protected')
+  
+}
+
+exports.isLoggedInUsingGoogle = async(req,res,next)=>{
+  console.log('enter')
+  req.user ? next() : console.log('notSs')
+}
