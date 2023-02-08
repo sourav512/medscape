@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
-import { Symptoms } from 'src/assets/symptoms'; 
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Symptoms } from 'src/assets/symptoms';
 
 @Component({
   selector: 'app-select-symptom',
@@ -9,39 +9,49 @@ import { Symptoms } from 'src/assets/symptoms';
 export class SelectSymptomComponent implements OnInit {
 
   symptoms = Symptoms;
-  selectedSymptoms:any[] = [];
+  selectedSymptoms: any[] = [];
+  @ViewChild('info') infoRef!: ElementRef;
   // isSelected:boolean = false;
 
   constructor() { }
 
-  selectSymptom(symptomCard:any){
-    // this.toggleCardColor(symptomCard);
+  selectSymptom(symptomCard: any) {
     this.addToSelectedSymptom(symptomCard)
     this.toggleCardColor(symptomCard)
-    console.log(this.selectedSymptoms);
   }
-  
-  addToSelectedSymptom(symptomCard:any){
-    let symptomAlreadySelectedIndex = this.selectedSymptoms.findIndex(x=>x.name===symptomCard.name)
-    if(symptomAlreadySelectedIndex === -1){
-      this.selectedSymptoms.push(symptomCard)
-    }else{
-      let removedSymptom = this.selectedSymptoms.splice(symptomAlreadySelectedIndex,1)[0];
+
+  addToSelectedSymptom(symptomCard: any) {
+    let symptomAlreadySelectedIndex = this.selectedSymptoms.findIndex(x => x.name === symptomCard.name)
+    if (symptomAlreadySelectedIndex === -1) {
+      this.selectedSymptoms.push(symptomCard);
+      symptomCard.isSelected = true;
+    } else {
+      this.selectedSymptoms.splice(symptomAlreadySelectedIndex, 1)[0];
+      symptomCard.isSelected = false;
     }
 
-    if(this.selectedSymptoms.length>5){
+    if (this.selectedSymptoms.length > 5) {
+      this.infoRef.nativeElement.style.color = 'red';
+      this.infoRef.nativeElement.style.fontSize = '1.2rem';
+      setTimeout(() => { 
+        this.infoRef.nativeElement.style.removeProperty('color') 
+        this.infoRef.nativeElement.style.removeProperty('font-size') 
+    }, 2000)
       let removeFirstSymptom = this.selectedSymptoms.shift();
       removeFirstSymptom.isSelected = false;
-      this.toggleCardColor(removeFirstSymptom)
-    }
+      console.log(this.selectedSymptoms)
+      this.toggleCardColor(removeFirstSymptom);
 
+
+    }
   }
 
-  toggleCardColor(card:any){
-    if(card.isSelected){
+
+  toggleCardColor(card: any) {
+    if (card.isSelected) {
       card.nativeElement.style.backgroundColor = '#6755ff';
       card.nativeElement.style.color = 'white'
-    }else{
+    } else {
       card.nativeElement.style.removeProperty('background-color')
       card.nativeElement.style.removeProperty('color')
     }

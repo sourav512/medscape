@@ -4,12 +4,12 @@
     </div>
     <div class="card-deck">
         <ng-container *ngFor="let symptom of symptoms">
-            <app-symptom-card [cardDetails]="symptom" (symptomSelectEvent)="selectSymptom($event)"></app-symptom-card>
+            <app-symptom-card [cardDetails]="symptom" (symptomSelectEvent)="selectSymptom($event)" [isSelected]="symptom.isSelected"></app-symptom-card>
         </ng-container>
     </div>
     <div class="bottom-toolbar">
         <button>Reset Selection</button>
-        <div class="info">5 Selection allowed</div>
+        <div class="info" #info>5 Selection allowed!</div>
         <button>Confirm Symptoms</button>
     </div>
 
