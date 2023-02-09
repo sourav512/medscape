@@ -1,3 +1,4 @@
+import sys
 from flask import Flask, request
 from flask_cors import CORS,cross_origin
 
@@ -13,7 +14,7 @@ CORS(app)
 @app.route('/',methods=['GET'])
 def home():
     args = request.args
-    x = m.NaiveBayesWithProps(args["s1"],args["s2"],args["s3"],args["s4"],args["s5"])
+    x = m.NaiveBayesWithProps(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
     return {"disease" : x}
     # response.headers.add("Access-Control-Allow-Origin", "*")
     # return args
