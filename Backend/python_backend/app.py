@@ -14,11 +14,11 @@ CORS(app)
 @app.route('/',methods=['GET'])
 def home():
     args = request.args
-    x = m.NaiveBayesWithProps(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+    x = m.NaiveBayesWithProps(args["s1"],args["s2"],args["s3"],args["s4"],args["s5"])    
     return {"disease" : x}
-    # response.headers.add("Access-Control-Allow-Origin", "*")
-    # return args
 
-
+@app.route('/flask', methods=['GET'])
+def index():
+    return "flask running"
 if __name__=='__main__':
     app.run(host="0.0.0.0",debug=True)

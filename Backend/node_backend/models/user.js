@@ -51,7 +51,11 @@ const userSchema = new mongoose.Schema({
     },
     disease_record:[
         {
-            disease_name:{
+            symptom_selected:{
+                type:Array,
+                default:null
+            },
+            disease_predicted:{
                 type: String,
                 default:'No disease'
             },
