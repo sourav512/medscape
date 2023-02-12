@@ -1,5 +1,6 @@
 const cloudinary = require("cloudinary");
 const User = require("../models/user");
+const Symptoms = require('../models/symptomData')
 const cookies = require("../utils/cookieToken")
 const mailHelper = require("../utils/mailHelper")
 const crypto = require('crypto')
@@ -151,23 +152,78 @@ exports.resetPassword = async(req,res,next) =>{
 }
 
 
-exports.googleLogin = async(req,res,next) =>{
-  await passport.authenticate('google', {scope: ['email', 'profile']})
-  console.log('enntry')
-}
+// exports.googleLogin = async(req,res,next) =>{
+//   await passport.authenticate('google', {scope: ['email', 'profile']})
+//   console.log('enntry')
+// }
 
 
-exports.googleLoginCall = async(req,res,next) =>{
-  passport.authenticate('google',{
-    failureRedirect:'/api/v1/auth/failure'
+// exports.googleLoginCall = async(req,res,next) =>{
+//   passport.authenticate('google',{
+//     failureRedirect:'/api/v1/auth/failure'
+//   })
+//   //res.redirect('/api/v1/aw')
+  
+//   res.redirect('/api/v1/protected')
+  
+// }
+
+// exports.isLoggedInUsingGoogle = async(req,res,next)=>{
+//   console.log('enter')
+//   req.user ? next() : console.log('notSs')
+// }
+
+
+exports.adminUpdateRole = async(req,res,next) =>{
+    const {role,email} = req.body
+  const filter = {email : `${email}`}
+  const update = {role: `${role}`}
+  const user = await User.findOneAndUpdate(filter,update,{
+    new:true
   })
-  //res.redirect('/api/v1/aw')
-  
-  res.redirect('/api/v1/protected')
-  
+  res.json({
+    success:true,
+    message:`Role updated to ${role}`,
+    status:200
+  }).status(200)
 }
 
-exports.isLoggedInUsingGoogle = async(req,res,next)=>{
-  console.log('enter')
-  req.user ? next() : console.log('notSs')
+
+exports.userDashboard = async(req,res,next) =>{
+    const user = req.user
+    console.log(user);
+   // res.send(user).status(200)
+   res.json({
+    user,
+    "status":200,
+    success:true
+   })
+
+}
+
+
+exports.updateUser = async(req,res,next) =>{
+    if(req.files){
+      const user = req.user
+      let file = req.files.photo
+      const result = await cloudinary.v2.uploader.upload(file.tempFilePath,{
+        folder:"users",
+        width:150,
+        crop:"scale"
+      });
+      const filter = {email: `${user.email}`}
+      const update = {photo:`${result.public_id}`}
+       const user2 = await User.findOneAndUpdate(filter,update,{
+        new:true,
+        upsert:true
+       })
+      res.json({
+        success:true,
+        message:'Image updated',
+        status:200,
+        imageUrl:`${result.public_id}`
+      })
+    }else{
+      res.send('Add image to upload')
+    }
 }
