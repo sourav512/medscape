@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SelectSymptomComponent } from './component/select-symptom/select-symptom.component';
 import { SymptomCardComponent } from './component/symptom-card/symptom-card.component';
+import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SymptomCardComponent } from './component/symptom-card/symptom-card.comp
     PageNotFoundComponent,
     NavbarComponent,
     SelectSymptomComponent,
-    SymptomCardComponent
+    SymptomCardComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -9,11 +9,15 @@ export class BackendService {
 
   private url: string = "http://localhost:3000/api/v1/"
 
-  loginUser(email:string,password:string){
-    return this.http.post(this.url + 'user/login',{email,password});
+  loginUser(email: string, password: string) {
+    return this.http.post(this.url + 'user/login', { email, password });
   }
 
-  signupUser(user:User){
-    return this.http.post(this.url + 'user/signup',user)
+  signupUser(user: User) {
+    return this.http.post(this.url + 'user/signup', user)
+  }
+
+  forgotPassword(email: string) {
+    return this.http.post(this.url + 'user/forgot', { email })
   }
 }

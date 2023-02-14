@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { LoginComponent } from './component/login/login.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { SelectSymptomComponent } from './component/select-symptom/select-symptom.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: '', component: LoginComponent },
   { path: 'predict', component: SelectSymptomComponent },
+  { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
