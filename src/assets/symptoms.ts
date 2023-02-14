@@ -341,27 +341,203 @@ export const Symptoms:any = [
         "description":"Neck stiffness is almost always a temporary symptom of overusing your neck or sleeping in an unusual position."
     },
     {
-        "name":"",
-        "description":""
+        "name":"Movement stiffness",
+        "description":"Muscle stiffness refers to a sensation of muscle tightness, which often causes pain and makes it challenging to move."
+    },
+    {
+        "name":"Spinning Movements",
+        "description":"Dizziness, spinning or moving (vertigo),A loss of balance or unsteadiness, Nausea,Vomiting"
+    },
+    {
+        "name":"Loss of balance",
+        "description":"Balance problems may cause dizziness and make you feel as though you're moving when you're actually standing or sitting still."
+    },
+    {
+        "name":"Unsteadiness",
+        "description":"the fact of not being completely in control of your movements so that you might fall. his unsteadiness when walking."
+    },
+    {
+        "name":"Weakness one body side",
+        "description":"Hemiparesis is a common after-effect of stroke that causes weakness on one side of the body"
+    },
+    {
+        "name":"Loss of smell",
+        "description":" A condition that causes a person to partially or completely lose his or her sense of smell"
+    },
+    {
+        "name":"Bladder discomfort",
+        "description":"Bladder pain syndrome is a poorly understood condition where you have pelvic pain and problems peeing"
+    },
+    {
+        "name":"foul smell of urine",
+        "description":"One of the most common reasons for strong-smelling pee is dehydration. Everyone's urine has ammonia in it."
+    },
+    {
+        "name":"continuous feel of urine",
+        "description":"If a person frequently needs to pee but little comes out when they try to go"
+    },
+    {
+        "name":"Passage of gases",
+        "description":"Common symptoms of gas in the digestive tract include belching, bloating and distention, and passing gas"
+    },
+    {
+        "name":"internal itching",
+        "description":"A complete blood count can provide evidence of an internal condition causing your itch, such as anemia"
+    },
+    {
+        "name":"toxic look (typhos)",
+        "description":"Typhus is a disease caused by rickettsia or orientia bacteria. You can get it from infected mites, fleas, or lice"
+    },
+    {
+        "name":"Depression",
+        "description":"Depression is a mood disorder that causes a persistent feeling of sadness and loss of interest"
+    },
+    {
+        "name":"Irritability",
+        "description":"Irritability is a feeling of agitation that you might experience as a result of stress, mental health conditions"
+    },
+    {
+        "name":"Muscle pain",
+        "description":"Muscle pain, or myalgia, is a sign of an injury, infection, disease or other health problem."
+    },
+    {
+        "name":"Altered sensorium",
+        "description":"Altered sensorium relates to general changes in brain function, such as confusion, loss of memory, loss of alertness"
+    },
+    {
+        "name":"Red spots over body",
+        "description":"red dots on the skin, including heat rash, KP, contact dermatitis, and atopic dermatitis"
+    },
+    {
+        "name":"Belly pain",
+        "description":"Abdominal pain is pain that you feel anywhere between your chest and groin,as the stomach region or belly."
+    },
+    {
+        "name":"Abnormal menstruation",
+        "description":"A cycle that lasts less than 21 days or more than 35 days. Menstrual flow that is noticeably heavier or lighter"
+    },
+    {
+        "name":"Dischromic patches",
+        "description":"Dyschromia is patchy skin discoloration that is often caused by accumulated sun exposure, infections, blood vessel changes"
+    },
+    {
+        "name":"Watering from eyes",
+        "description":"Allergies or viral infections, as well as any kind of inflammation, may cause watery eyes for a few days or so"
+    },
+    {
+        "name":"Increased appetite",
+        "description":"Excessive hunger is a sign that your body needs more food. It's often a result of imbalanced hunger hormones"
+    },
+    {
+        "name":"Polyuria",
+        "description":"Polyuria has generally been defined as a urine output exceeding 3 L/day in adults and 2 L/m2 in children"
+    },
+    {
+        "name":"family history",
+        "description":"A family health history is a record of health information about a person and his or her close relatives"
+    },
+    {
+        "name":"Mucoid sputum",
+        "description":"Mucous sputum is clear or translucent and viscous, containing only small numbers of microscopic elements"
+    },
+    {
+        "name":"Rusty sputum",
+        "description":"Sputum that is a different color from saliva may be a sign of a lower respiratory tract infection (RTI)"
+    },
+    {
+        "name":"Lack of concentration",
+        "description":"lack of sleep can lead to lower alertness, slower thought processes, and reduced concentration"
+    },
+    {
+        "name":"Visual disturbance",
+        "description":"Visual disturbance is when you experience a short spell of flashing or shimmering of light in your sight"
+    },
+    {
+        "name":"Receiving blood transfusion",
+        "description":"A blood transfusion is given through tubing connected to a needle or fine tube (catheter) that's in a vein"
+    },
+    {
+        "name":"Receiving unsterile injections",
+        "description":"Unsterile injection equipment associated with HIV outbreak and an extremely high prevalence of HCV—A case-control"
+    },
+    {
+        "name":"Coma",
+        "description":" A coma is a prolonged state of unconsciousness. During a coma, a person is unresponsive to their environment"
+    },
+    {
+        "name":"Stomach bleeding'",
+        "description":"Bleeding from anywhere in your digestive tract is a symptom of a disorder. Bleeding can be hidden or obvious"
+    },
+    {
+        "name":"Distention of abdomen",
+        "description":"A distended abdomen is abnormally swollen outward.You can see and measure the difference, and sometimes you can feel it"
     },
     {
         "name":"",
         "description":""
     },
     {
-        "name":"",
+        "name":"Luid overload",
+        "description":"Hypervolemia, also known as fluid overload, is a condition where you have too much fluid volume in your body"
+    },
+    {
+        "name":"blood in sputum",
+        "description":"Traces of blood in phlegm can be a sign of respiratory tract infection or a severe cough"
+    },
+    {
+        "name":"Prominent veins on calf",
+        "description":"Varicose veins are twisted, enlarged veins. Any vein that is close to the skin's surface can become varicosed."
+    },
+    {
+        "name":"Palpitations",
+        "description":"Heart palpitations (pal-pih-TAY-shuns) are feelings of having a fast-beating, fluttering or pounding heart"
+    },
+    {
+        "name":"Painful walking",
+        "description":"pain while walking is simply weakness of important muscles that help stabilize our joints while we're moving"
+    },
+    {
+        "name":"pus filled pimples",
+        "description":"Cystic acne is a type of inflammatory acne that causes painful, pus-filled pimples to form deep under the skin"
+    },
+    {
+        "name":"Blackheads",
+        "description":"Blackheads are a type of acne. They're open bumps on the skin that fill with excess oil and dead skin"
+    },
+    {
+        "name":"scurring",
         "description":""
     },
     {
-        "name":"",
+        "name":"Skin peeling",
+        "description":"The peeling or flaking process is your skin's way of recovering or healing from some type of damage"
+    },
+    {
+        "name":"Silver like dusting",
         "description":""
     },
     {
-        "name":"",
-        "description":""
+        "name":"small dents in nails",
+        "description":"Nail pitting is when you have tiny dents in your fingernails. It can be a sign of psoriasis,eczema,or joint inflammation"
     },
-
-
-
-
+    {
+        "name":"Inflammatory nails",
+        "description":"A variety of inflammatory skin conditions affect the nail,the commonest of which are psoriasis,lichen planus and alopecia areata"
+    },
+    {
+        "name":"Blister",
+        "description":"Blisters are small pockets of fluid that usually form in the upper layers of skin after it's been damaged"
+    },
+    {
+        "name":"Red sore around nose",
+        "description":"Perioral dermatitis usually appears as a rash of red bumps around the mouth and in the folds around the nose"
+    },
+    {
+        "name":"Yellow crust ooze",
+        "description":"Purulent drainage is a sign of infection. It's a white, yellow, or brown fluid and might be slightly thick in texture"
+    },
+    {
+        "name":"Prognosis",
+        "description":"prognosis includes the expected duration, function, and description of the course of the disease, such as progressive decline"
+    },
 ]
