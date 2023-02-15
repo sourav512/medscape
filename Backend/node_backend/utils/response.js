@@ -17,7 +17,7 @@ exports.failed = (res,message) =>{
 
 //response for status code 401
 exports.missing = (res,message) =>{
-    res.status(403).json({
+    res.status(401).json({
         message:`${message}`
     })
 }
