@@ -45,9 +45,17 @@
 
 .form-control,
 .email-input,
+.password-input,
 .button {
     display: flex;
     flex-direction: column;
+}
+
+.eye-icon i {
+    position: absolute;
+    margin-top: 0.65rem;
+    cursor: pointer;
+    margin-left: 18rem
 }
 
 .form-control{
@@ -86,6 +94,13 @@ button {
     margin: 0.25rem;
     font-weight: 500;
 }
+
+.heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
 
 
 @media only screen and (max-width: 600px) {
