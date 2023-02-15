@@ -44,6 +44,6 @@ button{
 
 .info{
     transition: 0.5s;
-    transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-timing-function: cubic-bezier(0.81, 0.06, 0, 0.97);
     color: #918f8f;
 }
