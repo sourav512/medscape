@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from 'src/app/config/backend.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -7,16 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private backendService:BackendService,private router:Router) { }
   email!:string;
-  oldPassword!:string;
-  newPassword!:string;
+  password!:string;
+  confirmPassword!:string;
 
   ngOnInit(): void {
   }
 
   resetPassword(){
-
+    this.backendService.resetPassword(this.password,this.confirmPassword).subscribe((data)=>{
+      console.log(data)
+    })
   }
 
 }

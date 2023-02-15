@@ -13,10 +13,11 @@
                     <div class="heading">Hello! {{user.firstName}}</div>
                     <div class="subheading">Welcome back! Please enter your details</div>
                 </div>
-                <div class="email-input">
-                    <input type="file" name="" id="uploadImage" style="display: none;">
+                <div>
+                    <input type="file" (change)="fileSelected($event)" name="" id="uploadImage" style="display: none;" accept="image/*">
                     <label for="uploadImage">
-                    <img class="profile-photo" src="../../../assets/undraw_pic_profile_re_7g2h.svg" alt="" srcset=""></label>
+                    <img class="profile-photo" src="https://cdn1.iconfinder.com/data/icons/rounded-black-basic-ui/139/Photo_Add-RoundedBlack-512.png" #profilePhoto alt="" srcset=""></label>
+                    <!-- <i class="fa-solid fa-plus"></i> -->
                 </div>
             </div>
             <div class="input-set">
