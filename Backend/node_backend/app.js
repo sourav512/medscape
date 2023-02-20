@@ -13,7 +13,11 @@ app.use(bodyParser.json())
 app.use(cookieParse())
 app.use(morgan('tiny'))
 app.use(bodyParser.urlencoded ({extended:true}))
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:4200',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}))
 
 
 //middleware for file upload

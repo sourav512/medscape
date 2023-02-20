@@ -10,8 +10,8 @@ export class BackendService {
 
   private url: string = "http://localhost:3000/api/v1/"
 
-  loginUser(email: string, password: string) {
-    return this.http.post(this.url + 'user/login', { email, password });
+  loginUser(email:string,password:string){
+    return this.http.post(this.url + 'user/login',{email,password},{observe: 'response', withCredentials: true});
   }
 
   signupUser(user: User) {
