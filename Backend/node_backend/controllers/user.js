@@ -63,7 +63,7 @@ exports.signUp = async (req, res, next) => {
         city,
         dateOfBirth,
       });
-      cookies(user, res);
+    cookies(user, res);
     }
   } 
   } catch (error) {
@@ -107,7 +107,7 @@ exports.forgotPassword = async(req,res,next) =>{
     }
     const forgotToken = user.getForgotPasswordToken()
     await user.save({validateBeforeSave: false})
-    const myUrl = `${req.protocol}://${req.get("host")}/api/v1/user/password/reset/${forgotToken}`
+    const myUrl = `${req.protocol}://localhost:4200/reset/${forgotToken}`
     const message = `Copy paste this url ${myUrl}`
     try {
       await mailHelper({
@@ -191,7 +191,7 @@ exports.adminUpdateRole = async(req,res,next) =>{
 
 exports.userDashboard = async(req,res,next) =>{
     const user = req.user
-    console.log(user);
+    //console.log(user);
    // res.send(user).status(200)
    res.json({
     user,
