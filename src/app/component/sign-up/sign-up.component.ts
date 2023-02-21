@@ -27,7 +27,10 @@ export class SignUpComponent implements OnInit {
     imageUrl:"dfasdf",
 
   }
+
   @ViewChild('firstName') firstNameField!: ElementRef;
+  @ViewChild('profilePhoto') profilePhoto!: ElementRef;
+  file!:File;
 
   signupUser(){
     console.log(this.user)
@@ -40,4 +43,17 @@ export class SignUpComponent implements OnInit {
     // this.firstName.nativeElement.focus();
   }
 
+  previewImage:any = "../../../assets/undraw_pic_profile_re_7g2h.svg"
+
+ async fileSelected(event:any){
+    this.file = event.target.files[0]
+    let reader = new FileReader();
+    reader.readAsDataURL(this.file)
+    reader.onload =async (data:any)=>{
+      this.profilePhoto.nativeElement.src =await data.target.result
+      this.profilePhoto.nativeElement.style.border = "3px solid #6c63ff"
+    }
+    console.log(this.file);
+    
+  }
 }
