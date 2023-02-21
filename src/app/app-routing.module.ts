@@ -6,12 +6,13 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { SelectSymptomComponent } from './component/select-symptom/select-symptom.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { AuthenticationGuard } from './config/authentication.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: '', component: LoginComponent },
-  { path: 'predict', component: SelectSymptomComponent },
+  { path: 'predict', component: SelectSymptomComponent,canActivate:[AuthenticationGuard] },
   { path: 'forgot', component: ForgotPasswordComponent },
   { path: 'reset/:id', component: ResetPasswordComponent },
   { path: '**', component: PageNotFoundComponent }
