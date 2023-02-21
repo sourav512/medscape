@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cookieParse = require('cookie-parser')
 const fileupload = require('express-fileupload')
 const cors = require('cors')
+const request = require('request')
 
 const app = express()
 
@@ -28,8 +29,13 @@ app.use(fileupload({
 
 const home = require('./routes/home')
 const user = require('./routes/user')
+const np = require('./routes/nodePython')
 
 
 app.use('/api/v1/',home)
 app.use('/api/v1/user',user)
+app.use('/api/v1/np',np)
+
+
+
 module.exports = app

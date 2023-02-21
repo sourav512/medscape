@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
         //validate: [validator.isEmail, `Please provide proper email`],
         unique:true 
     },
+    role:{
+        type:String,
+        default:'user'  
+    },
     contact:{
         type:String,
         required:[true,`Please enter the contact`],
@@ -45,13 +49,15 @@ const userSchema = new mongoose.Schema({
         minlength:[8,`Password must be of atleast 8 char length`]
     },
     photo:{
-        id:{
-            type: String,
-        }
+        type:String
     },
     disease_record:[
         {
-            disease_name:{
+            symptom_selected:{
+                type:Array,
+                default:null
+            },
+            disease_predicted:{
                 type: String,
                 default:'No disease'
             },

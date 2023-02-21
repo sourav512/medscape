@@ -10,6 +10,7 @@ const cookieToken = async(user,res) =>{
     user.password = undefined
     res.status(200).cookie("token",token,options).json({
         success : true,
+        status:200,
         token,
         user
     })
