@@ -15,13 +15,15 @@ exports.getSymptoms = async (req, res, next) => {
       console.log(body); // Print the data received
       const user = req.user;
       const arr = [s1, s2, s3, s4, s5];
+      let predictedDisease = JSON.parse(response.body)
       var d = body.toString();
       var w = '"disease":"';
       var f = d.substr(d.indexOf(w) + w.length);
       f = f.replace(/[^A-Za-z0-9- ]/g, "");
+      console.log(predictedDisease);
       const newData = {
         symptom_selected: arr,
-        disease_predicted: f,
+        disease_predicted: `${predictedDisease.disease}`,
         dignosed_on: Date.now(),
       };
       user.disease_record.push(newData);
@@ -35,7 +37,7 @@ exports.getSymptoms = async (req, res, next) => {
       // await symptomDoument.save();
       try {
         const message = `You are predicted to have ${
-          newData.disease_predicted
+          predictedDisease.disease
         } disease with symptoms such as ${arr.toString()}`;
         console.log(message);
         const user = await User.findById(req.user.id);
@@ -49,7 +51,7 @@ exports.getSymptoms = async (req, res, next) => {
       }
       res
         .json({
-          disease_predicted: f,
+          response : predictedDisease.disease,
           status: 200,
         })
         .status(200); //Display the response on the website

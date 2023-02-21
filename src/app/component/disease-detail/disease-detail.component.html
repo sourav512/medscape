@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="heading">
+        Predicted Disease Details
+    </div>
+    <div class="disease-detail">
+        <div class="section">
+            <div class="detail-set">
+                <div class="label">Name : </div>
+                <div class="detail">{{diseaseToShow.name}} <a (click)="showMoreDetails()">View more details...</a></div>
+            </div>
+            <div class="detail-set">
+                <div class="label">Detail : </div>
+                <div class="detail">{{diseaseToShow.description}}</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="detail-set">
+                <div class="label">Treatment : </div>
+                <div class="detail">{{diseaseToShow.treatment}}</div>
+            </div>
+            <div class="detail-set">
+                <div class="label">Specialist : </div>
+                <div class="detail" [innerHTML]="diseaseToShow.specialist"></div>
+            </div>
+            <div class="detail-set">
+                <div class="label">Symptom : </div>
+                <div class="detail">{{diseaseToShow.symptom}}</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-toolbar">
+        <button (click)="backToPredict()">Predict Again</button>
+        <!-- <button>Reset Selection</button> -->
+    </div>
+
+</div>

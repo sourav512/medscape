@@ -13,6 +13,8 @@ import { SelectSymptomComponent } from './component/select-symptom/select-sympto
 import { SymptomCardComponent } from './component/symptom-card/symptom-card.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
+import { DiseaseDetailComponent } from './component/disease-detail/disease-detail.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ResetPasswordComponent } from './component/reset-password/reset-passwor
     SelectSymptomComponent,
     SymptomCardComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DiseaseDetailComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

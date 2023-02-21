@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+import { DiseaseDetailComponent } from './component/disease-detail/disease-detail.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { LoginComponent } from './component/login/login.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'predict', component: SelectSymptomComponent,canActivate:[AuthenticationGuard] },
   { path: 'forgot', component: ForgotPasswordComponent },
+  { path: 'aboutUs', component: AboutUsComponent },
   { path: 'reset/:id', component: ResetPasswordComponent },
+  { path: 'disease/:id', component: DiseaseDetailComponent,canActivate:[AuthenticationGuard]  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

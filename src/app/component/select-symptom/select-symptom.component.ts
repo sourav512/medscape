@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { BackendService } from 'src/app/config/backend.service';
 import { Symptoms } from 'src/assets/symptoms';
 
 @Component({
@@ -13,7 +15,7 @@ export class SelectSymptomComponent implements OnInit {
   @ViewChild('info') infoRef!: ElementRef;
   // isSelected:boolean = false;
 
-  constructor() { }
+  constructor(private backendService : BackendService,private router : Router) { }
 
   selectSymptom(symptomCard: any) {
     this.addToSelectedSymptom(symptomCard)
@@ -41,8 +43,6 @@ export class SelectSymptomComponent implements OnInit {
       removeFirstSymptom.isSelected = false;
       console.log(this.selectedSymptoms)
       this.toggleCardColor(removeFirstSymptom);
-
-
     }
   }
 
@@ -57,7 +57,16 @@ export class SelectSymptomComponent implements OnInit {
     }
   }
 
-
+  predictDisease(){
+    let symptoms:any = [];
+    this.selectedSymptoms.forEach(item => symptoms.push(item.name))
+    // console.log(symptoms);
+    this.backendService.predictDisease(symptoms).subscribe((data)=>{
+      console.log(data)
+      let predictedDisease:any = data.body
+      this.router.navigateByUrl('/disease/'+ predictedDisease.response)
+    })
+  }
   ngOnInit(): void {
   }
 

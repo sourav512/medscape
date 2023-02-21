@@ -1,4 +1,4 @@
-[
+export const Disease:any =[
     {
         "name": "Fungal infection",
         "search" : "https://www.google.com/search?q=Fungal infection",
@@ -6,13 +6,13 @@
         "common cause":"",
         "treatment": "Treatments include antifungal medication.",
         "symptom":"Symptoms depend on the area affected, but can include skin rash or vaginal infection resulting in abnormal discharge.",
-        "specialist" :"Primary Care Provider (PCP)@OBGYN Doctor@Medical Microbiologist"
+        "specialist" :"Primary Care Provider (PCP)<br>OBGYN Doctor<br>Medical Microbiologist"
     },
     {
         "name": "Allergy",
         "search" : "https://www.google.com/search?q=Allergy",
         "description": "Allergy occurs when a person reacts to substances in the environment that are harmless to most people These substances are known as allergens and are found in dust mites, pets, pollen, insects, ticks, moulds, foods and some medications.",
-        "common cause": "a runny nose or sneezing @ pain or tenderness around your cheeks, eyes or forehead @ coughing, wheezing or breathlessness @ itchy skin or a raised rash (hives) @ diarrhoea @ feeling or being sick.",
+        "common cause": "a runny nose or sneezing <br> pain or tenderness around your cheeks, eyes or forehead <br> coughing, wheezing or breathlessness <br> itchy skin or a raised rash (hives) <br> diarrhoea <br> feeling or being sick.",
         "treatment": "Allergen avoidance-Your provider will help you take steps to identify and avoid your allergy triggers,Medications. Depending on your allergy, medications can help reduce your immune system reaction and ease symptoms,Immunotherapy,Emergency epinephrine.",
         "symptom":"Itchy, watery eyes,Itchy nose,Sneezing,Runny nose,Rashes, Hives (a rash with raised red patches), Stomach cramps,Vomiting.",
         "specialist" :""
@@ -21,17 +21,17 @@
         "name": "Gastroesophageal reflux disease (GERD)",
         "search" : "https://www.google.com/search?q=Gastroesophageal reflux disease (GERD)",
         "description": "This is a chronic disease that occurs when stomach acid or bile flows into the food pipe and irritates the lining. Acid reflux and heartburn more than twice a week may indicate GERD.",
-        "common cause": "Smoking.@Eating large meals or eating late at night.@Eating certain foods (triggers) such as fatty or fried foods.@Drinking certain beverages, such as alcohol or coffee.@Taking certain medications, such as aspirin.",
+        "common cause": "Smoking.<br>Eating large meals or eating late at night.<br>Eating certain foods (triggers) such as fatty or fried foods.<br>Drinking certain beverages, such as alcohol or coffee.<br>Taking certain medications, such as aspirin.",
         "treatment": "Relief from lifestyle changes and over-the-counter medication is usually temporary. Stronger medication may be required.",
         "symptom":"Symptoms include burning pain in the chest that usually occurs after eating and worsens when lying down.",
-        "specialist" :"Primary Care Provider (PCP)@Gastroenterologist@Paediatrician"
+        "specialist" :"Primary Care Provider (PCP)<br>Gastroenterologist<br>Paediatrician"
     },
     {
         "name": "Chronic cholestasis",
         "search" : "https://www.google.com/search?q=Chronic%20cholestasis",
         "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases.",
         "common cause": "Among the most common causes of cholestatic liver disease are primary biliary cirrhosis (PBC) and primary sclerosing cholangitis (PSC).",
-        "treatment": "Taking a prescription medicine called ursodiol (Actigall, Urso, Urso Forte). This medicine helps to lower the level of bile acids in your blood. Other medicines to relieve itching also may be an option.@Soaking itchy areas in cool or lukewarm water.",
+        "treatment": "Taking a prescription medicine called ursodiol (Actigall, Urso, Urso Forte). This medicine helps to lower the level of bile acids in your blood. Other medicines to relieve itching also may be an option.<br>Soaking itchy areas in cool or lukewarm water.",
         "symptom":"This may cause symptoms of indigestion and diarrhea. As cholestasis goes on, these more immediate effects can lead to longer-term consequences. Bile accumulating in your blood can cause symptoms of illness, jaundice and severe itching.",
         "specialist" :""
     },
@@ -40,7 +40,7 @@
         "search" : "https://www.google.com/search?q=Drug%20Reaction",
         "description": "A drug allergy is the reaction of the immune system to a medicine. Any medicine — nonprescription, prescription or herbal — can provoke a drug allergy. However, a drug allergy is more likely with certain medicines.",
         "common cause": "A drug allergy occurs when your immune system mistakenly identifies a drug as a harmful substance, such as a virus or bacterium. Once your immune system detects a drug as a harmful substance, it develops an antibody specific to that drug.",
-        "treatment": "Withdrawal of the drug. If your provider determines that you have a drug allergy — or likely allergy — discontinuing the drug is the first step in treatment. ...@Antihistamines@Corticosteroids@Treatment of anaphylaxis",
+        "treatment": "Withdrawal of the drug. If your provider determines that you have a drug allergy — or likely allergy — discontinuing the drug is the first step in treatment. ...<br>Antihistamines<br>Corticosteroids<br>Treatment of anaphylaxis",
         "symptom":"The most common symptoms of drug allergy are hives, rash or fever",
         "specialist" :"SPT and IDT are usually conducted by allergists and immunologists in specialist drug allergy clinics."
     },
@@ -51,7 +51,7 @@
         "common cause": "",
         "treatment": "Treatment usually includes medication to decrease stomach acid production. If it is caused by bacteria, antibiotics may be required.",
         "symptom":"Pain areas: in the chest or upper abdomen, Pain types: can be burning in the chest or dull,Gastrointestinal: belching, indigestion, nausea, passing excessive amounts of gas, or vomiting,Whole body: fatigue, feeling full sooner than normal, or loss of appetite",
-        "specialist" :"Primary Care Provider (PCP)@Gastroenterologist"
+        "specialist" :"Primary Care Provider (PCP)<br>Gastroenterologist"
     },
     {
         "name": "AIDS",
@@ -60,7 +60,7 @@
         "common cause": "",
         "treatment": "No cure exists for HIV/AIDS, but medications can control HIV and prevent disease progression. With treatment, most people with HIV in the U.S. don’t develop AIDS.",
         "symptom":"Fever,Headache,Muscle aches and joint pain,Rash,Sore throat and painful mouth sores,Swollen lymph glands, mainly on the neck,Diarrhea,Weight loss.",
-        "specialist" :"Infectious Disease Doctor@Clinical Psychologist"
+        "specialist" :"Infectious Disease Doctor<br>Clinical Psychologist"
     },
     {
         "name": "Diabetes ",
@@ -78,7 +78,7 @@
         "common cause": "",
         "treatment": "Avoiding contaminated food and water and washing hands can often help prevent infection. Rest and rehydration are the mainstays of treatment.",
         "symptom":"Diarrhoea, cramps, nausea, vomiting and low-grade fever are common symptoms",
-        "specialist" :"Gastroenterologist@Paediatrician@Emergency Medicine Doctor"
+        "specialist" :"Gastroenterologist<br>Paediatrician<br>Emergency Medicine Doctor"
     },
     {
         "name": "Bronchial Asthma",
@@ -87,7 +87,7 @@
         "common cause": "",
         "treatment": "Asthma can usually be managed with rescue inhalers to treat symptoms (salbutamol) and controller inhalers that prevent symptoms (steroids). Severe cases may require longer-acting inhalers that keep the airways open (formoterol, salmeterol, tiotropium), as well as inhalant steroids.",
         "symptom":"Asthma may cause difficulty breathing, chest pain, cough and wheezing. The symptoms may sometimes flare up ",
-        "specialist" :"Pulmonologist@Paediatrician@Respiratory Therapist"
+        "specialist" :"Pulmonologist<br>Paediatrician<br>Respiratory Therapist"
     },
     {
         "name": "Hypertension ",
@@ -96,7 +96,7 @@
         "common cause": "",
         "treatment": "Treatment consists of self care and diuretics,Physical exercise, Stress management, Quitting smoking, Home blood pressure monitors and Low sodium diet",
         "symptom":"High blood pressure often has no symptoms. Over time, if untreated, it can cause health conditions, such as heart disease and stroke",
-        "specialist" :"Primary Care Provider (PCP)@Cardiologist@Nephrologist"
+        "specialist" :"Primary Care Provider (PCP)<br>Cardiologist<br>Nephrologist"
     },
     {
         "name": "Migraine",
@@ -105,7 +105,7 @@
         "common cause": "",
         "treatment": "Preventive and pain-relieving medication can help manage migraine headaches,Stress management, Improved sleep habits, Avoid migraine triggers and Diet modification",
         "symptom":"Migraine headaches can cause throbbing in one particular area that can vary in intensity. Nausea and sensitivity to light and sound are also common symptoms.",
-        "specialist" :"Primary Care Provider (PCP)@Neurologist"
+        "specialist" :"Primary Care Provider (PCP)<br>Neurologist"
     },
     {
         "name": "Cervical spondylosis",
@@ -114,7 +114,7 @@
         "common cause": "",
         "treatment": "In many cases, no specific treatment is required. If symptoms occur, treatments include medication, corticosteroid injections, physiotherapy and sometimes surgery.",
         "symptom":"Pain areas: in the back, legs, thighs and buttocks that worsens with standing, neck, or shoulder,Muscular: muscle weakness or muscle spasms",
-        "specialist" :"Orthopaedic Surgeon@Physical Medicine and Rehabilitation@Physiotherapist@Neurologist"
+        "specialist" :"Orthopaedic Surgeon<br>Physical Medicine and Rehabilitation<br>Physiotherapist<br>Neurologist"
     },
     {
         "name": "Paralysis (brain hemorrhage)",
@@ -130,7 +130,7 @@
         "search" : "https://www.google.com/search?q=Jaundice",
         "description": "Yellow skin caused by the build-up of bilirubin in the blood.Jaundice may occur if the liver can't efficiently process red blood cells as they break down. It's normal in healthy newborns and usually clears on its own. At other ages, it may signal infection or liver disease.Symptoms include yellowing of the skin and whites of the eyes.Some newborns may require light therapy for a day or so. In other cases, treatment involves addressing the underlying cause.",
         "common cause": "Jaundice can have causes that aren't due to underlying disease. Examples include Gilbert's syndrome (a benign condition) or medication side effects.",
-        "treatment": "Notice any yellow tint to the skin or eyes of an infant, child or adult@Have dark coloured urine and abdominal swelling or expansion",
+        "treatment": "Notice any yellow tint to the skin or eyes of an infant, child or adult<br>Have dark coloured urine and abdominal swelling or expansion",
         "symptom":"Jaundice is a yellow color of the skin, mucus membranes, or eyes. The yellow coloring comes from bilirubin, a byproduct of old red blood cells",
         "specialist" :"gastroenterologist "
     },
@@ -141,7 +141,7 @@
         "common cause": "",
         "treatment": "People travelling to areas where malaria is common typically take protective drugs before, during and after their trip. Treatment includes antimalarial drugs.",
         "symptom":"Symptoms are chills, fever and sweating, usually occurring a few weeks after being bitten",
-        "specialist" :"Infectious Disease Doctor@Primary Care Provider (PCP)@Emergency Medicine Doctor"
+        "specialist" :"Infectious Disease Doctor<br>Primary Care Provider (PCP)<br>Emergency Medicine Doctor"
     },
     {
         "name": "Chicken pox",
@@ -150,7 +150,7 @@
         "common cause": "",
         "treatment": "Chickenpox can be prevented by a vaccine. Treatment usually involves relieving symptoms, although high-risk groups may receive antiviral medication.",
         "symptom":"The most characteristic symptom is an itchy, blister-like rash on the skin.",
-        "specialist" :"Paediatrician@Primary Care Provider (PCP)"
+        "specialist" :"Paediatrician<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Dengue",
@@ -159,7 +159,7 @@
         "common cause": "",
         "treatment": "Fluid replacement, Can be self-healing, Oral rehydration therapy and IV fluids",
         "symptom":"Symptoms include high fever, headache, rash and muscle and joint pain. In severe cases there is serious bleeding and shock, which can be life threatening",
-        "specialist" :"Infectious Disease Doctor@Primary Care Provider (PCP)@Emergency Medicine Doctor"
+        "specialist" :"Infectious Disease Doctor<br>Primary Care Provider (PCP)<br>Emergency Medicine Doctor"
     },
     {
         "name": "Typhoid",
@@ -168,7 +168,7 @@
         "common cause": "",
         "treatment": "Treatment consists of fluids and antibiotics,Treatment includes antibiotics and fluids,Supportive care,IV fluids and Oral rehydration therapy,Medications",
         "symptom":"Symptoms include high fever, headache, stomach pain, weakness, vomiting and loose stools",
-        "specialist" :"Infectious Disease Doctor@Primary Care Provider (PCP)@Emergency Medicine Doctor"
+        "specialist" :"Infectious Disease Doctor<br>Primary Care Provider (PCP)<br>Emergency Medicine Doctor"
     },
     {
         "name": "hepatitis A",
@@ -177,7 +177,7 @@
         "common cause": "",
         "treatment": "The condition clears up on its own in one or two months. Rest and adequate hydration can help.",
         "symptom":"Symptoms include fatigue, nausea, abdominal pain, loss of appetite and low-grade fever.",
-        "specialist" :"Hepatologist@Hepatologist@Primary Care Provider (PCP)"
+        "specialist" :"Hepatologist<br>Hepatologist<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Hepatitis B",
@@ -186,7 +186,7 @@
         "common cause": "",
         "treatment": "The condition often clears up on its own. Chronic cases require medication and possibly a liver transplant.",
         "symptom":"Symptoms are variable and include yellowing of the eyes, abdominal pain and dark urine. Some people, particularly children, don't experience any symptoms. In chronic cases, liver failure, cancer or scarring can occur.",
-        "specialist" :"Hepatologist@Gastroenterologist@Infectious Disease Doctor@Primary Care Provider (PCP)"
+        "specialist" :"Hepatologist<br>Gastroenterologist<br>Infectious Disease Doctor<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Hepatitis C",
@@ -195,7 +195,7 @@
         "common cause": "",
         "treatment": "Hepatitis C is treated with antiviral medication. In some people, newer medicines can eradicate the virus",
         "symptom":"Most people have no symptoms. Those who do develop symptoms may have fatigue, nausea, loss of appetite and yellowing of the eyes and skin.",
-        "specialist" :"Hepatologist@Gastroenterologist@Infectious Disease Doctor"
+        "specialist" :"Hepatologist<br>Gastroenterologist<br>Infectious Disease Doctor"
     },
     {
         "name": "Hepatitis D",
@@ -204,7 +204,7 @@
         "common cause": "",
         "treatment": "There are few treatments specifically for hepatitis D, although different regimes may be tried. Management also focuses on supportive care.",
         "symptom":"Symptoms include abdominal pain, nausea and fatigue",
-        "specialist" :"Hepatologist@Gastroenterologist@Infectious Disease Doctor"
+        "specialist" :"Hepatologist<br>Gastroenterologist<br>Infectious Disease Doctor"
     },
     {
         "name": "Hepatitis E",
@@ -213,7 +213,7 @@
         "common cause": "",
         "treatment": "Hepatitis E usually resolves on its own within four to six weeks. Treatment focuses on supportive care, rehydration and rest.",
         "symptom":"Symptoms include jaundice, lack of appetite and nausea. In rare cases, it may progress to acute liver failure",
-        "specialist" :"Hepatologist@Gastroenterologist@Infectious Disease Doctor@Primary Care Provider (PCP)"
+        "specialist" :"Hepatologist<br>Gastroenterologist<br>Infectious Disease Doctor<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Alcoholic hepatitis",
@@ -222,7 +222,7 @@
         "common cause": "",
         "treatment": "Treatment involves hydration, nutritional care and stopping alcohol use. Steroid drugs can help reduce liver inflammation.",
         "symptom":"Symptoms include yellow skin and eyes along with increasing stomach size due to fluid accumulation",
-        "specialist" :"Hepatologist@Gastroenterologist@Infectious Disease Doctor@Primary Care Provider (PCP)"
+        "specialist" :"Hepatologist<br>Gastroenterologist<br>Infectious Disease Doctor<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Tuberculosis",
@@ -231,7 +231,7 @@
         "common cause": "",
         "treatment": "Treatment isn't always required for those without symptoms. Patients with active symptoms will require a long course of treatment involving multiple antibiotics.",
         "symptom":"Most people infected with the bacteria that cause tuberculosis don't have symptoms. When symptoms do occur, they usually include a cough (sometimes blood-tinged), weight loss, night sweats and fever.",
-        "specialist" :"Pulmonologist@Infectious Disease Doctor@Primary Care Provider (PCP"
+        "specialist" :"Pulmonologist<br>Infectious Disease Doctor<br>Primary Care Provider (PCP"
     },
     {
         "name": "Common Cold",
@@ -240,7 +240,7 @@
         "common cause": "",
         "treatment": "Most people recover on their own within two weeks. Over-the-counter products and home remedies can help control symptoms.",
         "symptom":"Symptoms include a runny nose, sneezing and congestion. High fever or severe symptoms are reasons to see a doctor, especially in children",
-        "specialist" :"Pulmonologist@Primary Care Provider (PCP"
+        "specialist" :"Pulmonologist<br>Primary Care Provider (PCP"
     },
     {
         "name": "Pneumonia",
@@ -249,7 +249,7 @@
         "common cause": "",
         "treatment": "Antibiotics can treat many forms of pneumonia. Some forms of pneumonia can be prevented by vaccines.",
         "symptom":"Symptoms include a cough with phlegm or pus, fever, chills and difficulty breathing.",
-        "specialist" :"Lung Specialist@Infectious Disease Doctor@Respiratory Therapist"
+        "specialist" :"Lung Specialist<br>Infectious Disease Doctor<br>Respiratory Therapist"
     },
     {
         "name": "Dimorphic hemmorhoids(piles)",
@@ -258,7 +258,7 @@
         "common cause": "",
         "treatment": "Eat high-fiber foods,Use topical treatments,Soak regularly in a warm bath or sitz bath,Take oral pain relievers",
         "symptom":"Abdominal pain,Chronic constipation or diarrhea,Fever and chills,Nausea and vomiting,Severe rectal bleeding and pain.",
-        "specialist" :"family physician@gastroenterologist@proctologist."
+        "specialist" :"family physician<br>gastroenterologist<br>proctologist."
     },
     {
         "name": "Heart attack",
@@ -267,7 +267,7 @@
         "common cause": "",
         "treatment": "Treatment ranges from lifestyle changes and cardiac rehabilitation to medication, stents and bypass surgery.",
         "symptom":"Symptoms include tightness or pain in the chest, neck, back or arms, as well as fatigue, lightheadedness, abnormal heartbeat and anxiety. Women are more likely to have atypical symptoms than men.",
-        "specialist" :"Cardiologist@Cardiac Surgeon"
+        "specialist" :"Cardiologist<br>Cardiac Surgeon"
     },
     {
         "name": "Varicose veins",
@@ -276,7 +276,7 @@
         "common cause": "",
         "treatment": "Treatment involves compression stockings, exercise or procedures to close or remove the veins.",
         "symptom":"For many people, there are no symptoms and varicose veins are simply a cosmetic concern. In some cases, they cause aching pain and discomfort or signal an underlying circulatory problem.",
-        "specialist" :"Vascular Surgeon@Physical Medicine and Rehabilitation@Primary Care Provider (PCP)"
+        "specialist" :"Vascular Surgeon<br>Physical Medicine and Rehabilitation<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Hypothyroidism",
@@ -285,7 +285,7 @@
         "common cause": "",
         "treatment": "An underactive thyroid (hypothyroidism) is usually treated by taking daily hormone replacement tablets called levothyroxine",
         "symptom":"Major symptoms include fatigue, cold sensitivity, constipation, dry skin and unexplained weight gain",
-        "specialist" :"Endocrinologist@Primary Care Provider (PCP)"
+        "specialist" :"Endocrinologist<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Hyperthyroidism",
@@ -294,7 +294,7 @@
         "common cause": "",
         "treatment": "Treatments include radioactive iodine, medication and sometimes surgery.",
         "symptom":"Symptoms include unexpected weight loss, rapid or irregular heartbeat, sweating and irritability, although the elderly often experience no symptoms.",
-        "specialist" :"Nuclear Medicine Doctor@Endocrinologist@Primary Care Provider (PCP)"
+        "specialist" :"Nuclear Medicine Doctor<br>Endocrinologist<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Hypoglycemia",
@@ -303,7 +303,7 @@
         "common cause": "",
         "treatment": "Consuming high-sugar foods or drinks, such as orange juice or regular fizzy drinks, can treat this condition. Alternatively, medication can be used to raise blood sugar levels. It's also important that a doctor identifies and treats the underlying cause.",
         "symptom":"Confusion, heart palpitations, shakiness and anxiety are symptoms.",
-        "specialist" :"Diabetologist@Paediatrician@Geriatrician@Endocrinologist@Primary Care Provider (PCP)"
+        "specialist" :"Diabetologist<br>Paediatrician<br>Geriatrician<br>Endocrinologist<br>Primary Care Provider (PCP)"
     },
     {
         "name": "Osteoarthristis",
@@ -312,7 +312,7 @@
         "common cause": "",
         "treatment": "Medication, physiotherapy and sometimes surgery can help reduce pain and maintain joint movement.",
         "symptom":"Joint pain in the hands, neck, lower back, knees or hips is the most common symptom.",
-        "specialist" :"Orthopaedic Surgeon@Rheumatologist@Occupational Therapist@Physiotherapist"
+        "specialist" :"Orthopaedic Surgeon<br>Rheumatologist<br>Occupational Therapist<br>Physiotherapist"
     },
     {
         "name": "Arthritis",
@@ -321,7 +321,7 @@
         "common cause": "",
         "treatment": "Medication, physiotherapy or sometimes surgery helps reduce symptoms and improve quality of life.",
         "symptom":"Symptoms include pain, swelling, reduced range of motion and stiffness.",
-        "specialist" :"Orthopaedic Surgeon@Rheumatologist@Physiotherapist"
+        "specialist" :"Orthopaedic Surgeon<br>Rheumatologist<br>Physiotherapist"
     },
     {
         "name": "(vertigo) Paroymsal  Positional Vertigo",
@@ -330,7 +330,7 @@
         "common cause": "",
         "treatment": "Treatment includes a series of head movements that shift particles in the ears.",
         "symptom":"People can experience dizziness, a spinning sensation (vertigo), lightheadedness, unsteadiness, loss of balance and nausea.",
-        "specialist" :"Physiotherapist@Neurologist@Otolaryngologist"
+        "specialist" :"Physiotherapist<br>Neurologist<br>Otolaryngologist"
     },
     {
         "name": "Acne",
@@ -339,7 +339,7 @@
         "common cause": "",
         "treatment": "Treatments include over-the-counter creams and cleanser, as well as prescription antibiotics.",
         "symptom":"Symptoms range from uninflamed blackheads to pus-filled pimples or large, red and tender bumps",
-        "specialist" :"Paediatrician@Dermatologist"
+        "specialist" :"Paediatrician<br>Dermatologist"
     },
     {
         "name": "Urinary tract infection",
@@ -357,7 +357,7 @@
         "common cause": "",
         "treatment": "Treatment aims to remove scales and stop skin cells from growing so quickly. Topical ointments, light therapy and medication can offer relief.",
         "symptom":"The most common symptom is a rash on the skin, but sometimes the rash involves the nails or joints.",
-        "specialist" :"Rheumatologist@Dermatologist"
+        "specialist" :"Rheumatologist<br>Dermatologist"
     },
     {
         "name": "Impetigo",
@@ -366,6 +366,6 @@
         "common cause": "",
         "treatment": "Impetigo is treated with prescription mupirocin antibiotic ointment or cream applied directly to the sores two to three times a day for five to 10 days",
         "symptom":"The main symptom is red sores that form around the nose and mouth. The sores rupture, ooze for a few days, then form a yellow-brown crust.",
-        "specialist" :"Paediatrician@Dermatologist"
+        "specialist" :"Paediatrician<br>Dermatologist"
     }
 ]

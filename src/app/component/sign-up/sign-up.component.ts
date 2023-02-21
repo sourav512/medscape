@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, Directive } from '@angular/core';
+import { Router } from '@angular/router';
 import { BackendService } from 'src/app/config/backend.service';
 import { User } from 'src/app/models/Users';
 
@@ -9,7 +10,7 @@ import { User } from 'src/app/models/Users';
 })
 export class SignUpComponent implements OnInit {
   
-  constructor(private backendService:BackendService) { }
+  constructor(private backendService:BackendService, private router :  Router) { }
   
   showPassword: boolean = false;
 
@@ -34,7 +35,10 @@ export class SignUpComponent implements OnInit {
 
   signupUser(){
     console.log(this.user)
-    this.backendService.signupUser(this.user).subscribe((data)=>{
+    this.backendService.signupUser(this.user).subscribe((data:any)=>{
+      if(data.status === 200){
+        this.router.navigateByUrl('/login')
+      }
       console.log(data)
     })
   }

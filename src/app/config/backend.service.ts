@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class BackendService {
+  isUserLoggedIn!:boolean;
   constructor(private http: HttpClient,private router:Router) { }
 
   private url: string = "http://localhost:3000/api/v1/"
@@ -24,6 +25,29 @@ export class BackendService {
 
   resetPassword(password:string,confirmPassword:string){
     return this.http.post(this.url +'user/password/reset/' +this.router.url.split('/')[2],{password,confirmPassword})
+  }
+
+  logOut(){
+    return this.http.get(this.url + 'user/logout',{observe: 'response', withCredentials: true})
+  }
+
+  predictDisease(symptom:string[]){
+    let body = {
+      "s1":symptom[0],
+      "s2":symptom[1],
+      "s3":symptom[2],
+      "s4":symptom[3],
+      "s5":symptom[4]
+    }
+    return this.http.post(this.url + "np/getDisease",body,{observe: 'response', withCredentials: true})
+  }
+
+  getUserStatus():boolean{
+    let token = document.cookie.split("=")[1];
+    if(token){
+      this.isUserLoggedIn = true
+    }
+    return this.isUserLoggedIn
   }
 }
 

@@ -45,10 +45,6 @@ export const Symptoms:any = [
         "description":"Shivering occurs most commonly when a person is cold. It is usually temporary and should stop once the individual warms up"
     },
     {
-        "name":"shivering",
-        "description":"Shivering occurs most commonly when a person is cold. It is usually temporary and should stop once the individual warms up"
-    },
-    {
         "name":"chills",
         "description":"Chills are body’s way of raising its core temperature,Cold temperatures, viruses, infections and other illnesses can bring on chills."
     },
