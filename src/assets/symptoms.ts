@@ -20,10 +20,6 @@ export const Symptoms:any = [
         "description":"Nausea is an uneasiness of the stomach that often accompanies the urge to vomit, but doesn't always lead to vomiting"
     },
     {
-        "name": "stomach ache",
-        "description":"Nausea is an uneasiness of the stomach that often accompanies the urge to vomit, but doesn't always lead to vomiting"
-    },
-    {
         "name": "hair fall",
         "description":"Nausea is an uneasiness of the stomach that often accompanies the urge to vomit, but doesn't always lead to vomiting"
     },
@@ -39,10 +35,6 @@ export const Symptoms:any = [
     {
         "name":"continuous sneezing",
         "description":"Sneezing is caused by irritation to the mucous membranes of the nose or throat,it is a powerful involuntary expulsion of air"
-    },
-    {
-        "name":"shivering",
-        "description":"Shivering occurs most commonly when a person is cold. It is usually temporary and should stop once the individual warms up"
     },
     {
         "name":"shivering",
@@ -122,7 +114,7 @@ export const Symptoms:any = [
     },
     {
         "name":"high fever",
-        "description":""
+        "description":"if your temperature is 103 F (39.4 C) or higher. Seek immediate medical attention if any of these signs or symptoms accompanies a fever"
     },
     {
         "name":"Sunken",
@@ -202,7 +194,7 @@ export const Symptoms:any = [
     },
     {
         "name":"swelling of stomach",
-        "description":""
+        "description":"Abdominal swelling, or distention, is more often caused by overeating than by a serious illness"
     },
     {
         "name":"Swollen lymph nodes ",
@@ -238,7 +230,7 @@ export const Symptoms:any = [
     },
     {
         "name":"congestion",
-        "description":"Congestion is when your nose becomes stuffed up and inflamed. "
+        "description":"Nasal passages swollen with excess fluid and mucus, may be triggered by infection, tobacco smoke or perfume."
     },
     {
         "name":"Chest pain",
@@ -266,7 +258,7 @@ export const Symptoms:any = [
     }, 
     {
         "name":"irritation in anus",
-        "description":""
+        "description":"Anal itching is a common condition. The itch in or around the anus is often intense and can be embarrassing and uncomfortable."
     },
     {
         "name":"neck pain ",
@@ -314,11 +306,11 @@ export const Symptoms:any = [
     },
     {
         "name":"excessive hunger",
-        "description":""
+        "description":"Excessive hunger is a sign that your body needs more food. It's often a result of imbalanced hunger hormones"
     },
     {
         "name":"drying and tingling lips",
-        "description":""
+        "description":"Lip tingling can result from temporary conditions such as an allergic reaction to food, cold sores, or hyperventilation"
     },
     {
         "name":"slurred speech'",
@@ -473,11 +465,11 @@ export const Symptoms:any = [
         "description":"A distended abdomen is abnormally swollen outward.You can see and measure the difference, and sometimes you can feel it"
     },
     {
-        "name":"",
-        "description":""
+        "name":"History of alcohol consumption ",
+        "description":"The alcohol drinking history should elicit the average amount of alcohol consumed each day, the pattern of the patient's drinking"
     },
     {
-        "name":"Luid overload",
+        "name":"Fluid overload",
         "description":"Hypervolemia, also known as fluid overload, is a condition where you have too much fluid volume in your body"
     },
     {
@@ -506,7 +498,7 @@ export const Symptoms:any = [
     },
     {
         "name":"scurring",
-        "description":""
+        "description":"to move in or as if in a brisk pace : scamper. : to move around in an agitated, confused, or fluttering manner."
     },
     {
         "name":"Skin peeling",
@@ -514,7 +506,7 @@ export const Symptoms:any = [
     },
     {
         "name":"Silver like dusting",
-        "description":""
+        "description":"Silver poisoning, medically termed argyria, causes ashen gray discoloration of the skin . Due to chronic use of silver salts."
     },
     {
         "name":"small dents in nails",
