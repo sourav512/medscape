@@ -21,7 +21,7 @@ export class SelectSymptomComponent implements OnInit {
   }
 
   addToSelectedSymptom(symptomCard: any) {
-    let symptomAlreadySelectedIndex = this.selectedSymptoms.findIndex(x => x.name === symptomCard.name)
+    let symptomAlreadySelectedIndex = this.selectedSymptoms.findIndex(x => x.name === symptomCard.name)    
     if (symptomAlreadySelectedIndex === -1) {
       this.selectedSymptoms.push(symptomCard);
       symptomCard.isSelected = true;
