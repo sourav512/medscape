@@ -26,13 +26,13 @@ exports.getSymptoms = async (req, res, next) => {
       };
       user.disease_record.push(newData);
       await user.save();
-      const symptomDoument = await Symptom.findById(globalId);
-      const globalData = {
-        symptoms: arr,
-        date: Date.now(),
-      };
-      symptomDoument.global_symptoms.push(globalData);
-      await symptomDoument.save();
+      // const symptomDoument = await Symptom.findById(globalId);
+      // const globalData = {
+      //   symptoms: arr,
+      //   date: Date.now(),
+      // };
+      // symptomDoument.global_symptoms.push(globalData);
+      // await symptomDoument.save();
       try {
         const message = `You are predicted to have ${
           newData.disease_predicted
@@ -57,17 +57,17 @@ exports.getSymptoms = async (req, res, next) => {
   );
 };
 
-exports.resetGlobalSymptomData = async (req, res, next) => {
-  await Symptom.deleteMany({});
-  const globalSymptom = await Symptom.create({
-    global_symptoms: [
-      {
-        symptoms: ["s1"],
-        date: Date.now(),
-      },
-    ],
-  });
-  await globalSymptom.save();
-  globalId = globalSymptom._id;
-  res.send(globalSymptom._id);
-};
+// exports.resetGlobalSymptomData = async (req, res, next) => {
+//   await Symptom.deleteMany({});
+//   const globalSymptom = await Symptom.create({
+//     global_symptoms: [
+//       {
+//         symptoms: ["s1"],
+//         date: Date.now(),
+//       },
+//     ],
+//   });
+//   await globalSymptom.save();
+//   globalId = globalSymptom._id;
+//   res.send(globalSymptom._id);
+// };

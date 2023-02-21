@@ -3,5 +3,5 @@ const {getSymptoms,resetGlobalSymptomData} = require('../../python_backend/nodeP
 const {isAdmin, isLoggedIn} = require('../middlewares/user')
 router.route('/getDisease').post(isLoggedIn,getSymptoms)
 
-router.route('/resetdata').get(isLoggedIn,isAdmin('admin'),resetGlobalSymptomData)
+//router.route('/resetdata').get(isLoggedIn,isAdmin('admin'),resetGlobalSymptomData)
 module.exports = router
