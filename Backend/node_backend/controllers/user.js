@@ -63,6 +63,19 @@ exports.signUp = async (req, res, next) => {
         city,
         dateOfBirth,
       });
+      try {
+        const message = `Welcom to MedScape ${firstName} ${lastName} 
+        your username for login ${email}`;
+        console.log(message);
+        //const user = await User.findById(req.user.id);
+        await mailHelper({
+          email: user.email,
+          subject: "Welcome to medscape ",
+          message,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     cookies(user, res);
     }
   } 
