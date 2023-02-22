@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/config/backend.service';
+import { PageService } from 'src/app/config/page.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +11,13 @@ import { BackendService } from 'src/app/config/backend.service';
 })
 export class NavbarComponent implements OnInit {
 
-  // isUserLoggedIn:boolean = false;
+  private isUserLoggedInSub!:Subscription;
+  loggedIn!:boolean
 
-  constructor(private router : Router, private backendService : BackendService) { }
+  constructor(private router : Router, private backendService : BackendService,private pageService : PageService) { }
 
   ngOnInit(): void {
+    this.pageService.isUserLoggedIn.subscribe(isLoggedIn => this.loggedIn = isLoggedIn)
   }
 
 
@@ -29,7 +33,9 @@ export class NavbarComponent implements OnInit {
       console.log(data);
       
     });
+    this.pageService.isUserLoggedIn.next(false)
     this.router.navigateByUrl('/login')
   }
+  
 
 }

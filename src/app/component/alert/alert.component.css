@@ -1,0 +1,14 @@
+.alert{
+    position: absolute;
+    width: calc(100vw - 12px);
+    margin: 6px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    background-color: rgb(212, 237, 218);
+    color: rgb(49, 100, 60);
+    font-weight: 600;
+}
