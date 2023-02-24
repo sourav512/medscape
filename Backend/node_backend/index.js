@@ -2,6 +2,7 @@ const app = require('./app')
 require('dotenv').config()
 const cloudinary = require('cloudinary')
 const connectionWithDb = require('./config/db')
+
 connectionWithDb()
 cloudinary.config({
     cloud_name : 'codersstay',
