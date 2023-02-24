@@ -59,7 +59,9 @@ export class SelectSymptomComponent implements OnInit {
 
   predictDisease(){
     let symptoms:any = [];
-    this.selectedSymptoms.forEach(item => symptoms.push(item.name))
+    this.selectedSymptoms.forEach(item => symptoms.push(item.name.replaceAll(' ','_').toLowerCase()))
+    console.log(symptoms);
+    
     // console.log(symptoms);
     this.backendService.predictDisease(symptoms).subscribe((data)=>{
       console.log(data)
