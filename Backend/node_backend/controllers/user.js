@@ -126,7 +126,8 @@ exports.forgotPassword = async(req,res,next) =>{
       await mailHelper({
         email: user.email,
         subject: "Password Reset Email",
-        message
+        message,
+        link: myUrl
       })
       success(res,`Email sent successfully`)
     } catch (error) {

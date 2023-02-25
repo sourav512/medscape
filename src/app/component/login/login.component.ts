@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendService } from 'src/app/config/backend.service';
+import { PageService } from 'src/app/config/page.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   userName:string = '';
   password:string = '';
 
-  constructor(private backendService:BackendService,private router : Router) { }
+  constructor(private backendService:BackendService,private router : Router,private pageService : PageService) { }
   showPassword!: boolean;
   ngOnInit(): void {
   }
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
   loginUser(){
     this.backendService.loginUser(this.userName,this.password).subscribe((data)=>{
       if(data.status === 200){
+        this.pageService.isUserLoggedIn.next(true)
         this.router.navigateByUrl('/predict')
       }
     })
