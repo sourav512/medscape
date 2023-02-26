@@ -15,22 +15,23 @@ const { log } = require("console");
 
 exports.signUp = async (req, res, next) => {
   try {
-    const { firstName,lastName, email, password, gender, city, dateOfBirth ,contact} = req.body;
+    let body = JSON.parse(req.body.body)
+    const { firstName,lastName, email, password, gender, city, dateOfBirth ,contact} = body;
 
   if (!email || !firstName || !lastName || !password || !gender || !city || !dateOfBirth || !contact) {
     return next(missing(res, "All fields required"));
   } 
-  const user2 = await User.findOne({
+  const isUserExists = await User.findOne({
     $or:[
       {email},
       {contact}
     ]
   }) 
-  if(user2){
+  if(isUserExists){
     invalid(res, 'Email or contact  already exist');
   }
  
-  if (!user2) {
+  if (!isUserExists) {
     if(req.files){
       let file = req.files.photo;
       const result = await cloudinary.v2.uploader.upload(file.tempFilePath, {
@@ -227,7 +228,7 @@ exports.updateUser = async(req,res,next) =>{
       });
       const filter = {email: `${user.email}`}
       const update = {photo:`${result.public_id}`}
-       const user2 = await User.findOneAndUpdate(filter,update,{
+       const isUserExists = await User.findOneAndUpdate(filter,update,{
         new:true,
         upsert:true
        })

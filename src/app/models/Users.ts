@@ -7,5 +7,6 @@ export interface User {
     city: String,
     contact:String,
     gender: String,
-    imageUrl: String
+    imageUrl: String,
+    image:any
 }

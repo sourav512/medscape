@@ -26,38 +26,39 @@ export class SignUpComponent implements OnInit {
     gender:"",
     contact:"",
     imageUrl:"dfasdf",
-
+    image:File,
   }
 
   @ViewChild('firstName') firstNameField!: ElementRef;
   @ViewChild('profilePhoto') profilePhoto!: ElementRef;
   file!:File;
+  formData: FormData = new FormData();
 
-  signupUser(){
-    console.log(this.user)
-    this.backendService.signupUser(this.user).subscribe((data:any)=>{
-      if(data.status === 200){
+  async signupUser(){
+    this.formData.append('body',JSON.stringify(this.user)); 
+    this.backendService.signupUser(this.formData).subscribe((data:any)=>{
+      if(data.status === 200){  
         this.router.navigateByUrl('/login')
       }
       console.log(data)
     })
+    this.formData = new FormData()
   }
-
+  
   ngOnInit(): void {
     // this.firstName.nativeElement.focus();
   }
-
+  
   previewImage:any = "../../../assets/undraw_pic_profile_re_7g2h.svg"
-
- async fileSelected(event:any){
-    this.file = event.target.files[0]
+  
+  async fileSelected(event:any){
+    this.file = event.target.files[0];    
+    await this.formData.append('photo', this.file,this.file.name);
     let reader = new FileReader();
     reader.readAsDataURL(this.file)
     reader.onload =async (data:any)=>{
       this.profilePhoto.nativeElement.src =await data.target.result
       this.profilePhoto.nativeElement.style.border = "3px solid #6c63ff"
     }
-    console.log(this.file);
-    
   }
 }

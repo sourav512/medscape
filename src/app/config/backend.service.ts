@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/models/Users'
 import { Router } from '@angular/router';
 @Injectable({
@@ -14,7 +14,7 @@ export class BackendService {
     return this.http.post(this.url + 'user/login',{email,password},{observe: 'response', withCredentials: true});
   }
 
-  signupUser(user: User) {
+  signupUser(user: any) {
     return this.http.post(this.url + 'user/signup', user)
   }
 
