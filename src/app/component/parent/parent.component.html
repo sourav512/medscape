@@ -1,7 +1,0 @@
-<div>
-
-    <h1 appHighlight>this is parent</h1>
-    <h3>From Child : {{dataFromChild}}</h3>
-    <input type="text" [(ngModel)]="name">
-    <app-child [name]="name" (sendMessageEmitter)="recievedMessage($event)"></app-child>
-</div>

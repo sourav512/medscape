@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/models/Users'
 import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class BackendService {
-  isUserLoggedIn!:boolean;
   constructor(private http: HttpClient,private router:Router) { }
 
   private url: string = "http://localhost:3000/api/v1/"
@@ -15,7 +14,7 @@ export class BackendService {
     return this.http.post(this.url + 'user/login',{email,password},{observe: 'response', withCredentials: true});
   }
 
-  signupUser(user: User) {
+  signupUser(user: any) {
     return this.http.post(this.url + 'user/signup', user)
   }
 
@@ -42,12 +41,5 @@ export class BackendService {
     return this.http.post(this.url + "np/getDisease",body,{observe: 'response', withCredentials: true})
   }
 
-  getUserStatus():boolean{
-    let token = document.cookie.split("=")[1];
-    if(token){
-      this.isUserLoggedIn = true
-    }
-    return this.isUserLoggedIn
-  }
 }
 
