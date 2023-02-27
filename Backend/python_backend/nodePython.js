@@ -97,14 +97,21 @@ exports.resetGlobalSymptomData = async (req, res, next) => {
 };
 
 exports.getDataOnDate = async(req,res,next) =>{
-    const {date} = req.body
-    console.log(date)
-    const s = await Symptom.find({date:{$eq:date}})
+    const {start_date, end_date} = req.body
+    //console.log(date)
+    await Symptom.find({
+      $and: [
+        {date: {$eq:start_date}},
+        {date: {$lt:end_date}}
+      ]
+    })
+    //const s = await Symptom.find({date:{$gt:start_date}})
     .then(function(data,err){
       if(err){
         res.send(err)
       }else{
        // res.send(data)
+       console.log(data)
        res.send(getMostOccurredSymptom(data))
       }
     })
@@ -144,6 +151,6 @@ function getMostOccurredSymptom(data) {
     }
   }
   console.log(symptomsCount)
-  return mostOccurredSymptom;
-  //return symptomsCount
+  //return mostOccurredSymptom;
+  return symptomsCount
 }
