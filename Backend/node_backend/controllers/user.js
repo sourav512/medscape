@@ -48,9 +48,7 @@ exports.signUp = async (req, res, next) => {
         contact,
         city,
         dateOfBirth,
-        photo: {
-          id: result.public_id,
-        },
+        photo: result.secure_url,
       });
       cookies(user, res);
     }else{

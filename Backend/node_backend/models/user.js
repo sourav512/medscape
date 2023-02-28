@@ -49,7 +49,8 @@ const userSchema = new mongoose.Schema({
         minlength:[8,`Password must be of atleast 8 char length`]
     },
     photo:{
-        type:String
+        type:String,
+        default:'No image'  
     },
     disease_record:[
         {
