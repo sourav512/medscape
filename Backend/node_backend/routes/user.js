@@ -8,8 +8,7 @@ router.route('/updaterole').post(isLoggedIn,isAdmin('admin'),adminUpdateRole)
 router.route('/password/reset/:token').post(resetPassword)
 router.route('/logout').get(logOut)
 router.route('/userdashboard').get(isLoggedIn,userDashboard)
-
-router.route('/updateuser').post(isLoggedIn,updateUser)
+router.route('/updateuser').post(isLoggedIn,isAdmin('Admin'),updateUser)
 
 
 
