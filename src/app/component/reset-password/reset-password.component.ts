@@ -19,7 +19,7 @@ export class ResetPasswordComponent implements OnInit {
 
   resetPassword(){
     this.backendService.resetPassword(this.password,this.confirmPassword).subscribe((data)=>{
-      console.log(data)
+      alert("Password reset successful")
     })
   }
 

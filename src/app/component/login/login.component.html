@@ -28,7 +28,8 @@
                     style="border:2px solid rgb(19, 95, 236);color: rgb(19,95,236);background-color: white;">Google
                     Signin</button> -->
                 <!-- <button class="google-button">SignUp</button> -->
-                <span class="signup">Don't have an account? <a routerLink="/signup">Sign up</a></span>
+                <span class="signup" *ngIf="!wrongPassword">Don't have an account? <a routerLink="/signup">Sign up</a></span>
+                <span class="signup" *ngIf="wrongPassword">Can't remember your password? <a routerLink="/forgot">Forgot Password</a></span>
             </div>
         </div>
     </div>
