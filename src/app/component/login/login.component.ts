@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
       }
       console.log(this.wrongPassword);
     },
-      (error) => {this.wrongPassword = true}
+      (error) => {this.wrongPassword = true;
+      alert("Wrong Password try angain.")}
     )
   }
 

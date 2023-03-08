@@ -12,12 +12,13 @@ import { User } from 'src/app/models/Users';
 export class UserDashboardComponent implements OnInit {
 
   user!:User;
-  image:string='https://res.cloudinary.com/codersstay/image/upload/v1677613339/users/vrpehxyzghnhegvu2xcb.jpg'
+  image!:string;
   constructor(private pageService : PageService,private backendService : BackendService,private router : Router) { }
 
   ngOnInit (){
     this.backendService.getUserDetail().subscribe((data:any)=>{
       this.user = data.body.user
+      this.image = data.body.user.photo
       console.log(data);
     })
     
