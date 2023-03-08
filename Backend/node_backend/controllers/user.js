@@ -225,7 +225,7 @@ exports.updateUser = async(req,res,next) =>{
         crop:"scale"
       });
       const filter = {email: `${user.email}`}
-      const update = {photo:`${result.public_id}`}
+      const update = {photo:`${result.secure_url}`}
        const isUserExists = await User.findOneAndUpdate(filter,update,{
         new:true,
         upsert:true
@@ -234,7 +234,7 @@ exports.updateUser = async(req,res,next) =>{
         success:true,
         message:'Image updated',
         status:200,
-        imageUrl:`${result.public_id}`
+        imageUrl:`${result.secure_url}`
       })
     }else{
       res.send('Add image to upload')

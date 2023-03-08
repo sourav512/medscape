@@ -30,6 +30,10 @@ export class BackendService {
     return this.http.get(this.url + 'user/logout',{observe: 'response', withCredentials: true})
   }
 
+  getUserDetail(){
+    return this.http.get(this.url + 'user/userDashboard',{observe: 'response', withCredentials: true})
+  }
+
   predictDisease(symptom:string[]){
     let body = {
       "s1":symptom[0],

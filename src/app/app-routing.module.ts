@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { SelectSymptomComponent } from './component/select-symptom/select-symptom.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { UserDashboardComponent } from './component/user-dashboard/user-dashboard.component';
 import { AuthenticationGuard } from './config/authentication.guard';
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'reset/:id', component: ResetPasswordComponent },
   { path: 'disease/:id', component: DiseaseDetailComponent,canActivate:[AuthenticationGuard]  },
+  { path: 'dashboard', component: UserDashboardComponent, canActivate: [AuthenticationGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
 

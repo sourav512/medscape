@@ -1,12 +1,12 @@
 export interface User {
-    firstName: String,
-    lastName: String,
-    email: String,
-    password: String,
-    dateOfBirth: String,
-    city: String,
-    contact:String,
-    gender: String,
-    imageUrl: String,
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    dateOfBirth: string,
+    city: string,
+    contact:string,
+    gender: string,
+    photo: string,
     image:any
 }
