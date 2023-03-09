@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/config/backend.service';
 import { PageService } from 'src/app/config/page.service';
+import { User } from 'src/app/models/Users';
 
 @Component({
   selector: 'app-navbar',
@@ -12,12 +13,18 @@ import { PageService } from 'src/app/config/page.service';
 export class NavbarComponent implements OnInit {
 
   private isUserLoggedInSub!:Subscription;
-  loggedIn!:boolean
+  loggedIn!:boolean;
+  imageURL!:string;
 
   constructor(private router : Router, private backendService : BackendService,private pageService : PageService) { }
 
   ngOnInit(): void {
-    this.pageService.isUserLoggedIn.subscribe(isLoggedIn => this.loggedIn = isLoggedIn)
+    this.pageService.isUserLoggedIn.subscribe(isLoggedIn => this.loggedIn = isLoggedIn);
+    this.backendService.getUserDetail().subscribe((data:any)=>{
+      this.imageURL = data.body.user.photo
+      console.log(data);
+      
+    })
   }
 
 
@@ -26,6 +33,9 @@ export class NavbarComponent implements OnInit {
   }
   goToPredict(){
     this.router.navigateByUrl('/predict')
+  }
+  goToUserDashboard(){
+    this.router.navigateByUrl('/dashboard')
   }
 
   logOutUser(){

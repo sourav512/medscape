@@ -13,7 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   forgotPassword() {
     this.backendService.forgotPassword(this.email).subscribe((data) => {
-      console.log(data)
+      alert("Reset link send successfully")
     })
   }
 

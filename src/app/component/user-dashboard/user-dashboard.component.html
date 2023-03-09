@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="details">
+    <div class="image">
+      <img [src]="image" alt="" srcset="">
+      <div class="name">{{user.firstName}} {{user.lastName}}</div>
+    </div>
+    <div class="line">
+      <div class="detail-point">
+        <div class="label">City</div>
+        <div class="data">{{user.city}}</div>
+      </div>
+      <div class="detail-point">
+        <div class="label">DOB</div>
+        <div class="data">{{user.dateOfBirth | date:'mediumDate'}}</div>
+      </div>
+      <div class="detail-point">
+        <div class="label">Gender</div>
+        <div class="data">{{user.gender}}</div>
+      </div>
+    </div>
+    <div class="line">
+      <div class="detail-point">
+        <div class="label">Contact</div>
+        <div class="data">{{user.contact}}</div>
+      </div>
+      <div class="detail-point">
+        <div class="label">Email</div>
+        <div class="data">{{user.email}}</div>
+      </div>
+    </div>
+    <div class="line"><button (click)="logOutUser()">Logout</button></div>
+  </div>
+</div>

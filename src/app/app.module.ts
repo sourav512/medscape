@@ -16,6 +16,9 @@ import { ResetPasswordComponent } from './component/reset-password/reset-passwor
 import { DiseaseDetailComponent } from './component/disease-detail/disease-detail.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
 import { AlertComponent } from './component/alert/alert.component';
+import { UserDashboardComponent } from './component/user-dashboard/user-dashboard.component';
+import { PageService } from './config/page.service';
+import { BackendService } from './config/backend.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { AlertComponent } from './component/alert/alert.component';
     ResetPasswordComponent,
     DiseaseDetailComponent,
     AboutUsComponent,
-    AlertComponent
+    AlertComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { AlertComponent } from './component/alert/alert.component';
     FormsModule ,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

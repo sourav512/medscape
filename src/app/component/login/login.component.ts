@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   userName:string = '';
   password:string = '';
+  wrongPassword:boolean = false;
 
   constructor(private backendService:BackendService,private router : Router,private pageService : PageService) { }
   showPassword!: boolean;
@@ -25,7 +26,14 @@ export class LoginComponent implements OnInit {
         this.pageService.isUserLoggedIn.next(true)
         this.router.navigateByUrl('/predict')
       }
-    })
+      if(data.status === 401){
+        this.wrongPassword = true;
+      }
+      console.log(this.wrongPassword);
+    },
+      (error) => {this.wrongPassword = true;
+      alert("Wrong Password try angain.")}
+    )
   }
 
 }

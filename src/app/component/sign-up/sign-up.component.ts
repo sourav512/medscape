@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit {
     city:"",
     gender:"",
     contact:"",
-    imageUrl:"dfasdf",
+    photo:"",
     image:File,
   }
 
