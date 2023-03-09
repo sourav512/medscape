@@ -15,6 +15,7 @@ exports.getSymptoms = async (req, res, next) => {
       console.log("statusCode:", response && response.statusCode); // Print the response status code if a response was received
       console.log(body); // Print the data received
       const user = req.user;
+      //console.log(user.disease_record+'+++++++++++++++++++++++++++++++++++');
       const arr = [s1, s2, s3, s4, s5];
       let predictedDisease = JSON.parse(response.body)
       var d = body.toString();
@@ -25,9 +26,9 @@ exports.getSymptoms = async (req, res, next) => {
         symptom_selected: arr,
         disease_predicted: `${predictedDisease.disease}`,
         dignosed_on: Date.now(),
-      };
+      }
       user.disease_record.push(newData);
-      await user.save();
+      //await user.save({validateBeforeSave:false})
 
 
       // var symptomDoument = await Symptom.findOne({identity:'admin'});

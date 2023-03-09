@@ -9,8 +9,7 @@ require('../utils/googleAuth')
 const {invalid,success,
         missing,
         notFound} = require("../utils/response");
-const { async } = require("rxjs");
-const { log } = require("console");
+
 
 
 exports.signUp = async (req, res, next) => {

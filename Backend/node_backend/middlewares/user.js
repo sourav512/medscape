@@ -10,7 +10,7 @@ exports.isLoggedIn = async(req,res,next) =>{
         //return next(res.send('not allowed'))
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET)
+    const decoded =  jwt.verify(token, process.env.JWT_SECRET)
     req.user = await user.findById(decoded.id)
     req.user.password = undefined;
 
